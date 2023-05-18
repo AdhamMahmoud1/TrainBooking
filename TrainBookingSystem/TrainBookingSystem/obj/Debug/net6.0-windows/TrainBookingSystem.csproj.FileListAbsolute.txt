@@ -1,0 +1,17 @@
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\bin\Debug\net6.0-windows\TrainBookingSystem.exe
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\bin\Debug\net6.0-windows\TrainBookingSystem.deps.json
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\bin\Debug\net6.0-windows\TrainBookingSystem.runtimeconfig.json
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\bin\Debug\net6.0-windows\TrainBookingSystem.dll
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\bin\Debug\net6.0-windows\TrainBookingSystem.pdb
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.csproj.AssemblyReference.cache
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Form1.resources
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.csproj.GenerateResource.cache
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.AssemblyInfoInputs.cache
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.AssemblyInfo.cs
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.csproj.CoreCompileInputs.cache
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.dll
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\refint\TrainBookingSystem.dll
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.pdb
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.genruntimeconfig.cache
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\ref\TrainBookingSystem.dll
