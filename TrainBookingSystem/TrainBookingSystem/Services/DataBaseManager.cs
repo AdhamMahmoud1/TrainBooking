@@ -3,11 +3,185 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Xml.Linq;
 
 namespace TrainBookingSystem.Services
 {
-    internal class DataBaseManager
+    public class DataBaseManager
     {
+        private String connectionString;
+        private SqlConnection connection;
+
+
+        /* Constructors */
+        public DataBaseManager()                  
+        {
+            // build the connection
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "FADYKAMAL";
+            builder.InitialCatalog = "TrainBookingSystem";
+            //builder.UserID = "FADYKAMAL/fadyk";
+            //builder.Password = "";
+            builder.TrustServerCertificate= true;
+            builder.IntegratedSecurity = true;
+            this.connectionString = builder.ToString();
+
+
+            // initialize the connection
+            this.connection = new SqlConnection(connectionString);
+
+        }
+
+        public DataBaseManager(String server, String database, String userName, String password)       
+        {
+            // build the connection
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource= server;
+            builder.InitialCatalog= database; 
+            builder.UserID = userName;
+            builder.Password= password;
+            builder.TrustServerCertificate = true;
+            this.connectionString = builder.ToString();   
+
+
+            // initialize the connection
+            this.connection = new SqlConnection(connectionString);
+        }
+
+        /* Setters and Getters (encapsulation) */
+        public String ConnectionString
+        {
+            get { return connectionString; }
+            set { connectionString = value; }
+        }
+
+        public SqlConnection SqlConnection
+        {
+            get { return connection; }
+            set
+            {
+                connection = value;
+            }
+        }
+
+
+        /* Insatnce Methods */
+        public bool ConnectToDatabase()
+        {
+            try
+            {
+                // try open connection
+                this.connection.Open();
+
+                // confirming message
+                Console.WriteLine("!! Connected To Database !!");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // error message
+                Console.WriteLine("!! Error connecting to database:  " + ex.Message);
+                return false;
+            }
+                
+        }
+
+        public bool IsConnected() 
+        {
+            return (this.connection.State == System.Data.ConnectionState.Open);
+        }
+
+
+        public void Disconnect()
+        {
+            if (IsConnected())
+            {
+                this.connection.Close();
+                Console.WriteLine("!! Disconnected From Database !!");
+            }
+        }
+
+        public bool DoElementExistInTable<T>(string tableName = "Users", string columnName = "Email", T element = default)
+        {
+            bool exists = false;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = $"SELECT COUNT(*) FROM {tableName} WHERE {columnName} = @ElementValue";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ElementValue", element);
+
+                    int count = 0;
+
+                    try
+                    {
+                        count = (int)command.ExecuteScalar();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle the exception appropriately for your application type
+                        MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    exists = (count > 0);
+                }
+
+                connection.Close();
+            }
+
+            return exists;
+        }
+
+
+        public bool InsertNewClient(String firstName="", String lastName="", String email="", String phoneNumber="", String password="")
+        {
+            // flag
+            bool inserted = false;
+
+            try
+            {
+                // new connection
+                this.connection.Open();
+
+                // query
+                String query = $"INSERT INTO Users(FirstName, LastName, Email, PhoneNumber, Password) VALUES(@firstname, @lastname, @email, @phonenumber, @password)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@firstname", firstName);
+                    command.Parameters.AddWithValue("@lastname", lastName);
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@phonenumber", phoneNumber);
+                    command.Parameters.AddWithValue("@password", password);
+
+
+                    // get number of row affected to know if they been inserted or not
+                    int rowAffected = command.ExecuteNonQuery();
+
+                    if (rowAffected > 0) { inserted = true; }
+
+
+                }
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception Caught", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // close connection
+            this.connection.Close();
+
+            // return flag
+            return inserted;
+        }
 
     }
 }
