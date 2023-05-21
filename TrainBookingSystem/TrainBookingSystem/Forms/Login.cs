@@ -1,4 +1,6 @@
-﻿using TrainBookingSystem.Services;
+﻿using Microsoft.Data.SqlClient;
+using TrainBookingSystem.Models;
+using TrainBookingSystem.Services;
 
 namespace TrainBookingSystem.Forms
 {
@@ -82,7 +84,7 @@ namespace TrainBookingSystem.Forms
                 {
                     // message box, user logged in
                     MessageBox.Show("Succesfully Logged In!, WELCOME Admin.", "Successful Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Console.WriteLine("Succesfully Logged In!, WELCOME Admin.");
+
 
                     // set logged in = true
                     this.isLoggedInAsAdmin = true;
@@ -127,6 +129,49 @@ namespace TrainBookingSystem.Forms
             this.Hide();
         }
 
+
+        
+        public Admin GetLoggedinAdminFromDB()
+        {
+            // empty admin
+            Admin admin = new Admin();
+
+            try
+            {
+                // get reader from database
+                SqlDataReader reader = this._dataBaseManager.GetUserFromDB<String>("Admins", "Email", this.textBoxEmail.Text);
+
+                if (this.isLoggedInAsAdmin)
+                {
+                    // store featched in amdin
+                    while (reader.Read())
+                    {
+                        admin.AdminId = (int)reader.GetValue(0);
+                        admin.FirstName = (string)reader.GetValue(1);
+                        admin.LastName = (string)reader.GetValue(2);
+                        admin.Email = (string)reader.GetValue(3);
+                        admin.PhoneNumber = (string)reader.GetValue(4);
+                        admin.Password = (string)reader.GetValue(5);
+                    }
+                }
+                else
+                {
+                    // print admin hasn't signed in yet
+                    MessageBox.Show("Admin Hasn't LoggedIn Yet!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            // close connection
+            this._dataBaseManager.Disconnect();
+
+            return admin;
+        }
+        
 
 
         ///////////////////////////////////////////////////////////////////////// Helper Functions //////////////////////////////////////////////////////////////////////////
