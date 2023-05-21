@@ -1,4 +1,5 @@
 using TrainBookingSystem.Forms;
+using TrainBookingSystem.Models;
 
 namespace TrainBookingSystem
 {
@@ -14,8 +15,6 @@ namespace TrainBookingSystem
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Login());
-
-            
         }
     }
 }
