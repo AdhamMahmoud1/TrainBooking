@@ -8,5 +8,6 @@ namespace TrainBookingSystem.Models
 {
     internal class User
     {
+
     }
 }
