@@ -8,7 +8,8 @@ namespace TrainBookingSystem.Forms
 
         /* Local Attributes */
         private DataBaseManager _dataBaseManager;
-        private bool isLoggedIn;
+        private bool isLoggedInAsAdmin;
+        private bool isLoggedInAsCustomer;
 
 
         /* Constructors */
@@ -20,7 +21,8 @@ namespace TrainBookingSystem.Forms
             this._dataBaseManager = new DataBaseManager();
 
             // initialize isLoggedIn with false untill user loggs in
-            this.isLoggedIn = false;
+            this.isLoggedInAsAdmin = false;
+            this.isLoggedInAsCustomer = false;
         }
 
 
@@ -33,9 +35,14 @@ namespace TrainBookingSystem.Forms
             
         }
 
-        public bool IsLoggedIn
+        public bool IsLoggedInAsAdmin
         {
-            get { return isLoggedIn; }
+            get { return isLoggedInAsAdmin; }
+        }
+
+        public bool IsLoggedInAsCustomer
+        {
+            get { return isLoggedInAsCustomer; }
         }
 
 
@@ -53,7 +60,39 @@ namespace TrainBookingSystem.Forms
             }
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
+
+        private void LoginAsAdminButton_Click(object sender, EventArgs e)
+        {
+
+            // validate
+            if (IsValidInputFields())
+            {
+                // check if in database
+                if (!this._dataBaseManager.DoElementExistInTable<String>("Admins", "Email", this.textBoxEmail.Text))
+                {
+                    MessageBox.Show("Unfortunatlly You Are Not An Admin", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else if (!this._dataBaseManager.DoElementExistInTable<String>("Admins", "Password", textBoxPassword.Text))
+                {
+                    MessageBox.Show("Invalid Password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    // message box, user logged in
+                    MessageBox.Show("Succesfully Logged In!, WELCOME Admin.", "Successful Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Console.WriteLine("Succesfully Logged In!, WELCOME Admin.");
+
+                    // set logged in = true
+                    this.isLoggedInAsAdmin = true;
+                }
+            }
+        }
+
+        
+        
+        private void LoginAsCustomerButton_Click(object sender, EventArgs e)
         {
 
             // validate
@@ -62,22 +101,21 @@ namespace TrainBookingSystem.Forms
                 // check if in database
                 if (!this._dataBaseManager.DoElementExistInTable<String>("Users", "Email", this.textBoxEmail.Text))
                 {
-                    MessageBox.Show("not A Clinet", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Unfortunatlly You Are Not A Customer", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 else if (!this._dataBaseManager.DoElementExistInTable<String>("Users", "Password", textBoxPassword.Text))
                 {
                     MessageBox.Show("Invalid Password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 else
                 {
                     // message box, user logged in
-                    MessageBox.Show("Succesfully Logged In!.", "Successful Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Console.WriteLine("Succesfully Logged In !");
+                    MessageBox.Show("Succesfully Logged In!, WELCOME Customer.", "Successful Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Console.WriteLine("Succesfully Logged In!");
 
                     // set logged in = true
-                    this.isLoggedIn = true;
+                    this.isLoggedInAsCustomer = true;
                 }
             }
         }
@@ -139,7 +177,7 @@ namespace TrainBookingSystem.Forms
         }
 
 
-        public static bool IsValidInputs(string firstName, string email, string phoneNumber, string deparment, string dpLevel, string Dbrith, string Gender, string MStatus, string NumKids, string Specil)
+        private bool IsValidInputs(string firstName, string email, string phoneNumber, string deparment, string dpLevel, string Dbrith, string Gender, string MStatus, string NumKids, string Specil)
         {
             // declare a validator
             Validator v = new Validator();

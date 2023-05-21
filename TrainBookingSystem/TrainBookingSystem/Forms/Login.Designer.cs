@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.labelSignUp = new System.Windows.Forms.Label();
             this.labelDontHaveAnAccount = new System.Windows.Forms.Label();
-            this.LoginButton = new System.Windows.Forms.Button();
+            this.LoginAsCustomerButton = new System.Windows.Forms.Button();
             this.CheckBoxShowpassword = new System.Windows.Forms.CheckBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.lablePassword = new System.Windows.Forms.Label();
@@ -41,6 +41,7 @@
             this.LoginInHeader = new System.Windows.Forms.Label();
             this.emailError = new System.Windows.Forms.ErrorProvider(this.components);
             this.passwordError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.LoginAdmin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.emailError)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordError)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +51,7 @@
             this.labelSignUp.AutoSize = true;
             this.labelSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelSignUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(194)))));
-            this.labelSignUp.Location = new System.Drawing.Point(148, 464);
+            this.labelSignUp.Location = new System.Drawing.Point(148, 544);
             this.labelSignUp.Name = "labelSignUp";
             this.labelSignUp.Size = new System.Drawing.Size(74, 23);
             this.labelSignUp.TabIndex = 30;
@@ -60,28 +61,28 @@
             // labelDontHaveAnAccount
             // 
             this.labelDontHaveAnAccount.AutoSize = true;
-            this.labelDontHaveAnAccount.Location = new System.Drawing.Point(92, 441);
+            this.labelDontHaveAnAccount.Location = new System.Drawing.Point(92, 521);
             this.labelDontHaveAnAccount.Name = "labelDontHaveAnAccount";
             this.labelDontHaveAnAccount.Size = new System.Drawing.Size(203, 23);
             this.labelDontHaveAnAccount.TabIndex = 31;
             this.labelDontHaveAnAccount.Text = "Don\'t Have An Account?";
             // 
-            // LoginButton
+            // LoginAsCustomerButton
             // 
-            this.LoginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(194)))));
-            this.LoginButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginButton.FlatAppearance.BorderSize = 0;
-            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginButton.ForeColor = System.Drawing.Color.White;
-            this.LoginButton.Location = new System.Drawing.Point(37, 379);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(299, 48);
-            this.LoginButton.TabIndex = 29;
-            this.LoginButton.Text = "Log in";
-            this.LoginButton.UseMnemonic = false;
-            this.LoginButton.UseVisualStyleBackColor = false;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            this.LoginAsCustomerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(194)))));
+            this.LoginAsCustomerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LoginAsCustomerButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoginAsCustomerButton.FlatAppearance.BorderSize = 0;
+            this.LoginAsCustomerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoginAsCustomerButton.ForeColor = System.Drawing.Color.White;
+            this.LoginAsCustomerButton.Location = new System.Drawing.Point(37, 459);
+            this.LoginAsCustomerButton.Name = "LoginAsCustomerButton";
+            this.LoginAsCustomerButton.Size = new System.Drawing.Size(299, 48);
+            this.LoginAsCustomerButton.TabIndex = 29;
+            this.LoginAsCustomerButton.Text = "Login As Customer";
+            this.LoginAsCustomerButton.UseMnemonic = false;
+            this.LoginAsCustomerButton.UseVisualStyleBackColor = false;
+            this.LoginAsCustomerButton.Click += new System.EventHandler(this.LoginAsCustomerButton_Click);
             // 
             // CheckBoxShowpassword
             // 
@@ -159,6 +160,22 @@
             // 
             this.passwordError.ContainerControl = this;
             // 
+            // LoginAdmin
+            // 
+            this.LoginAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(194)))));
+            this.LoginAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LoginAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoginAdmin.FlatAppearance.BorderSize = 0;
+            this.LoginAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoginAdmin.ForeColor = System.Drawing.Color.White;
+            this.LoginAdmin.Location = new System.Drawing.Point(37, 405);
+            this.LoginAdmin.Name = "LoginAdmin";
+            this.LoginAdmin.Size = new System.Drawing.Size(299, 48);
+            this.LoginAdmin.TabIndex = 29;
+            this.LoginAdmin.Text = "Login As Admin";
+            this.LoginAdmin.UseVisualStyleBackColor = false;
+            this.LoginAdmin.Click += new System.EventHandler(this.LoginAsAdminButton_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -167,7 +184,8 @@
             this.ClientSize = new System.Drawing.Size(380, 622);
             this.Controls.Add(this.labelSignUp);
             this.Controls.Add(this.labelDontHaveAnAccount);
-            this.Controls.Add(this.LoginButton);
+            this.Controls.Add(this.LoginAdmin);
+            this.Controls.Add(this.LoginAsCustomerButton);
             this.Controls.Add(this.CheckBoxShowpassword);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.lablePassword);
@@ -193,7 +211,7 @@
 
         private Label labelSignUp;
         private Label labelDontHaveAnAccount;
-        private Button LoginButton;
+        private Button LoginAsCustomerButton;
         private CheckBox CheckBoxShowpassword;
         private TextBox textBoxPassword;
         private Label lablePassword;
@@ -202,5 +220,6 @@
         private Label LoginInHeader;
         private ErrorProvider emailError;
         private ErrorProvider passwordError;
+        private Button LoginAdmin;
     }
 }
