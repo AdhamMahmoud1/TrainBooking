@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using Microsoft.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Xml.Linq;
+using System.Globalization;
 
 namespace TrainBookingSystem.Services
 {
@@ -167,8 +168,6 @@ namespace TrainBookingSystem.Services
                     int rowAffected = command.ExecuteNonQuery();
 
                     if (rowAffected > 0) { inserted = true; }
-
-
                 }
             }
             catch(SqlException ex)
@@ -182,6 +181,41 @@ namespace TrainBookingSystem.Services
             // return flag
             return inserted;
         }
+
+        public SqlDataReader GetUserFromDB<T>(String tableName="Users", String columnName="Email", T element=default)
+        {
+            SqlDataReader reader = null;
+
+            // connect to database
+            ConnectToDatabase();
+
+            // query 
+            String query = $"SELECT * FROM {tableName} WHERE {columnName} = @ElementValue";
+
+
+            // exute command
+            using (SqlCommand command = new SqlCommand(query, this.SqlConnection))
+            {
+                // replace @element valude with element name
+                command.Parameters.AddWithValue("@ElementValue", element);
+
+                // store return in reader
+                try
+                {
+                    reader= command.ExecuteReader();
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception appropriately for your application type
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+            // reutrn datareader
+            return reader;
+        }
+       
 
     }
 }
