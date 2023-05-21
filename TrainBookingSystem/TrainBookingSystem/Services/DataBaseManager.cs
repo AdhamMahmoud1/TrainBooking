@@ -23,8 +23,8 @@ namespace TrainBookingSystem.Services
         {
             // build the connection
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "FADYKAMAL";
-            builder.InitialCatalog = "TrainBookingSystem";
+            builder.DataSource = "DESKTOP-FR4U3I0";
+            builder.InitialCatalog = "BookingTrain";
             //builder.UserID = "FADYKAMAL/fadyk";
             //builder.Password = "";
             builder.TrustServerCertificate= true;
@@ -142,6 +142,43 @@ namespace TrainBookingSystem.Services
             return exists;
         }
 
+
+        public bool InsertNewTrain(String kind = "", int noSeats = 0)
+        {
+            // flag
+            bool inserted = false;
+
+            try
+            {
+                // new connection
+                this.connection.Open();
+
+                // query
+                String query = $"INSERT INTO Train(TrainID, kind, seats) VALUES(1, @kind, @noSeats)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@kind", kind);
+                    command.Parameters.AddWithValue("@noSeats", noSeats);
+                  
+
+
+                    // get number of row affected to know if they been inserted or not
+                    int rowAffected = command.ExecuteNonQuery();
+
+                    if (rowAffected > 0) { inserted = true; }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception Caught", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // close connection
+            this.connection.Close();
+
+            // return flag
+            return inserted;
+        }
 
         public bool InsertNewClient(String firstName="", String lastName="", String email="", String phoneNumber="", String password="")
         {

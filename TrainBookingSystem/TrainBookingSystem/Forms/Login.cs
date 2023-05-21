@@ -70,12 +70,12 @@ namespace TrainBookingSystem.Forms
             if (IsValidInputFields())
             {
                 // check if in database
-                if (!this._dataBaseManager.DoElementExistInTable<String>("Admins", "Email", this.textBoxEmail.Text))
+                if (!this._dataBaseManager.DoElementExistInTable<String>("Admin", "Email", this.textBoxEmail.Text))
                 {
                     MessageBox.Show("Unfortunatlly You Are Not An Admin", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
-                else if (!this._dataBaseManager.DoElementExistInTable<String>("Admins", "Password", textBoxPassword.Text))
+                else if (!this._dataBaseManager.DoElementExistInTable<String>("Admin", "Password", textBoxPassword.Text))
                 {
                     MessageBox.Show("Invalid Password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -101,12 +101,12 @@ namespace TrainBookingSystem.Forms
             if (IsValidInputFields())
             {
                 // check if in database
-                if (!this._dataBaseManager.DoElementExistInTable<String>("Users", "Email", this.textBoxEmail.Text))
+                if (!this._dataBaseManager.DoElementExistInTable<String>("Passenger", "Email", this.textBoxEmail.Text))
                 {
                     MessageBox.Show("Unfortunatlly You Are Not A Customer", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
-                else if (!this._dataBaseManager.DoElementExistInTable<String>("Users", "Password", textBoxPassword.Text))
+                else if (!this._dataBaseManager.DoElementExistInTable<String>("Passenger", "Password", textBoxPassword.Text))
                 {
                     MessageBox.Show("Invalid Password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -139,7 +139,7 @@ namespace TrainBookingSystem.Forms
             try
             {
                 // get reader from database
-                SqlDataReader reader = this._dataBaseManager.GetUserFromDB<String>("Admins", "Email", this.textBoxEmail.Text);
+                SqlDataReader reader = this._dataBaseManager.GetUserFromDB<String>("Admin", "Email", this.textBoxEmail.Text);
 
                 if (this.isLoggedInAsAdmin)
                 {
