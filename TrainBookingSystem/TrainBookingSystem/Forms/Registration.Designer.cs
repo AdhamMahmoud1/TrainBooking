@@ -42,6 +42,7 @@
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.labelPhoneNumber = new System.Windows.Forms.Label();
             this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             LoginInHeader = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             this.labelSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelSignUp.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelSignUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(194)))));
-            this.labelSignUp.Location = new System.Drawing.Point(163, 579);
+            this.labelSignUp.Location = new System.Drawing.Point(163, 623);
             this.labelSignUp.Name = "labelSignUp";
             this.labelSignUp.Size = new System.Drawing.Size(61, 23);
             this.labelSignUp.TabIndex = 39;
@@ -74,7 +75,7 @@
             // 
             this.labelDontHaveAnAccount.AutoSize = true;
             this.labelDontHaveAnAccount.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelDontHaveAnAccount.Location = new System.Drawing.Point(104, 554);
+            this.labelDontHaveAnAccount.Location = new System.Drawing.Point(104, 598);
             this.labelDontHaveAnAccount.Name = "labelDontHaveAnAccount";
             this.labelDontHaveAnAccount.Size = new System.Drawing.Size(198, 25);
             this.labelDontHaveAnAccount.TabIndex = 40;
@@ -90,7 +91,7 @@
             this.RegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.RegisterButton.ForeColor = System.Drawing.Color.White;
-            this.RegisterButton.Location = new System.Drawing.Point(46, 487);
+            this.RegisterButton.Location = new System.Drawing.Point(46, 531);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(299, 48);
             this.RegisterButton.TabIndex = 38;
@@ -203,12 +204,27 @@
             this.textBoxPhoneNumber.Size = new System.Drawing.Size(299, 27);
             this.textBoxPhoneNumber.TabIndex = 36;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "male",
+            "female"});
+            this.comboBox1.Location = new System.Drawing.Point(194, 469);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(151, 33);
+            this.comboBox1.TabIndex = 41;
+            this.comboBox1.Text = "Gender";
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(392, 651);
+            this.ClientSize = new System.Drawing.Size(392, 681);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.labelSignUp);
             this.Controls.Add(this.labelDontHaveAnAccount);
             this.Controls.Add(this.RegisterButton);
@@ -248,5 +264,6 @@
         internal Label labelUsername;
         private TextBox textBoxPhoneNumber;
         private Label labelPhoneNumber;
+        private ComboBox comboBox1;
     }
 }

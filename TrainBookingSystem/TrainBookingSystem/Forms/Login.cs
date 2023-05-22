@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using TrainBookingSystem.Models;
 using TrainBookingSystem.Services;
 
@@ -70,24 +70,29 @@ namespace TrainBookingSystem.Forms
             if (IsValidInputFields())
             {
                 // check if in database
-                if (!this._dataBaseManager.DoElementExistInTable<String>("Admins", "Email", this.textBoxEmail.Text))
+                if (!this._dataBaseManager.DoElementExistInTable<String>("Admin", "Email", this.textBoxEmail.Text))
                 {
                     MessageBox.Show("Unfortunatlly You Are Not An Admin", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
-                else if (!this._dataBaseManager.DoElementExistInTable<String>("Admins", "Password", textBoxPassword.Text))
+                else if (!this._dataBaseManager.DoElementExistInTable<String>("Admin", "Password", textBoxPassword.Text))
                 {
                     MessageBox.Show("Invalid Password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 else
                 {
-                    // message box, user logged in
-                    MessageBox.Show("Succesfully Logged In!, WELCOME Admin.", "Successful Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (this._dataBaseManager.DoesUserExistInTable<String>("Admin", this.textBoxEmail.Text, this.textBoxPassword.Text))
+                    {
+                        // message box, user logged in
+                        MessageBox.Show("Succesfully Logged In!, WELCOME Admin.", "Successful Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-                    // set logged in = true
-                    this.isLoggedInAsAdmin = true;
+                        // set logged in = true
+                        this.isLoggedInAsAdmin = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unfortunatlly You Are Not An Admin", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
         }
@@ -101,23 +106,29 @@ namespace TrainBookingSystem.Forms
             if (IsValidInputFields())
             {
                 // check if in database
-                if (!this._dataBaseManager.DoElementExistInTable<String>("Users", "Email", this.textBoxEmail.Text))
+                if (!this._dataBaseManager.DoElementExistInTable<String>("Passenger", "Email", this.textBoxEmail.Text))
                 {
                     MessageBox.Show("Unfortunatlly You Are Not A Customer", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
-                else if (!this._dataBaseManager.DoElementExistInTable<String>("Users", "Password", textBoxPassword.Text))
+                else if (!this._dataBaseManager.DoElementExistInTable<String>("Passenger", "Password", textBoxPassword.Text))
                 {
                     MessageBox.Show("Invalid Password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    // message box, user logged in
-                    MessageBox.Show("Succesfully Logged In!, WELCOME Customer.", "Successful Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Console.WriteLine("Succesfully Logged In!");
+                    if (this._dataBaseManager.DoesUserExistInTable<String>("Passenger", this.textBoxEmail.Text, this.textBoxPassword.Text))
+                    {
+                        // message box, user logged in
+                        MessageBox.Show("Succesfully Logged In!, WELCOME Passenger.", "Successful Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // set logged in = true
-                    this.isLoggedInAsCustomer = true;
+                        // set logged in = true
+                        this.isLoggedInAsCustomer = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unfortunatlly You Are Not An Cusomter", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
         }
@@ -139,7 +150,7 @@ namespace TrainBookingSystem.Forms
             try
             {
                 // get reader from database
-                SqlDataReader reader = this._dataBaseManager.GetUserFromDB<String>("Admins", "Email", this.textBoxEmail.Text);
+                SqlDataReader reader = this._dataBaseManager.GetUserFromDB<String>("Admin", "Email", this.textBoxEmail.Text);
 
                 if (this.isLoggedInAsAdmin)
                 {
@@ -170,7 +181,7 @@ namespace TrainBookingSystem.Forms
             this._dataBaseManager.Disconnect();
 
             return admin;
-        }
+        } 
         
 
 

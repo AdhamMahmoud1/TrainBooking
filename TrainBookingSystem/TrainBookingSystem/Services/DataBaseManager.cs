@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
-using Microsoft.Data.SqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Xml.Linq;
 using System.Globalization;
+using Org.BouncyCastle.Cms;
 
 namespace TrainBookingSystem.Services
 {
@@ -25,8 +24,6 @@ namespace TrainBookingSystem.Services
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = "FADYKAMAL";
             builder.InitialCatalog = "TrainBookingSystem";
-            //builder.UserID = "FADYKAMAL/fadyk";
-            //builder.Password = "";
             builder.TrustServerCertificate= true;
             builder.IntegratedSecurity = true;
             this.connectionString = builder.ToString();
@@ -106,7 +103,7 @@ namespace TrainBookingSystem.Services
             }
         }
 
-        public bool DoElementExistInTable<T>(string tableName = "Users", string columnName = "Email", T element = default)
+        public bool DoElementExistInTable<T>(string tableName = "Passenger", string columnName = "Email", T element = default)
         {
             bool exists = false;
 
@@ -143,7 +140,31 @@ namespace TrainBookingSystem.Services
         }
 
 
-        public bool InsertNewClient(String firstName="", String lastName="", String email="", String phoneNumber="", String password="")
+        public bool DoesUserExistInTable<T>(string tableName="Passenger", String email="", String password="")
+        {
+            bool exists = false;
+            
+
+            // get user from database
+            SqlDataReader reader = GetUserFromDB<String>(tableName, "Email", email);
+
+            if (reader != null)
+            {
+                // then  check if credengitals through featched row
+                if (reader.Read()) 
+                {
+                    exists = (reader.GetValue(2).ToString() == email && reader.GetValue(5).ToString() == password);
+                }
+
+            }
+
+            reader.Close();
+            return exists;
+        }
+
+
+
+        public bool InsertNewPassenger(String username = "", String email="", String phoneNumber="", String gender="male", String password="")
         {
             // flag
             bool inserted = false;
@@ -154,13 +175,13 @@ namespace TrainBookingSystem.Services
                 this.connection.Open();
 
                 // query
-                String query = $"INSERT INTO Users(FirstName, LastName, Email, PhoneNumber, Password) VALUES(@firstname, @lastname, @email, @phonenumber, @password)";
+                String query = $"INSERT INTO Passenger(Username, Email, PhoneNumber, Gender, Password) VALUES(@username, @email, @phoneNumber, @gender, @password)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@firstname", firstName);
-                    command.Parameters.AddWithValue("@lastname", lastName);
+                    command.Parameters.AddWithValue("@username", username);
                     command.Parameters.AddWithValue("@email", email);
                     command.Parameters.AddWithValue("@phonenumber", phoneNumber);
+                    command.Parameters.AddWithValue("@gender", gender);
                     command.Parameters.AddWithValue("@password", password);
 
 
@@ -182,7 +203,7 @@ namespace TrainBookingSystem.Services
             return inserted;
         }
 
-        public SqlDataReader GetUserFromDB<T>(String tableName="Users", String columnName="Email", T element=default)
+        public SqlDataReader GetUserFromDB<T>(String tableName= "Passenger", String columnName="Email", T element=default)
         {
             SqlDataReader reader = null;
 

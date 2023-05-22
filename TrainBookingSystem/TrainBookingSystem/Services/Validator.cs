@@ -50,7 +50,7 @@ namespace TrainBookingSystem.Services
         {
 
             // create a regex pattern to match the entered phone number with
-            rgx = new Regex(@"^(\+)?\d+$");
+            rgx = new Regex(@"^(010|011|012|015)\d{8}$");
 
             // if is match return true else return the predefined answer = false
             return rgx.IsMatch(phoneNumber);

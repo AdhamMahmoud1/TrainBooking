@@ -61,7 +61,7 @@ namespace TrainBookingSystem.Forms
 
             if (IsValidInputs(this.textBoxUsername.Text, this.textBoxEmail.Text, this.textBoxPhoneNumber.Text))
             {
-                if (this._dataBaseManager.DoElementExistInTable<String>("Users", "Email", this.textBoxEmail.Text))
+                if (this._dataBaseManager.DoElementExistInTable<String>("Passenger", "Email", this.textBoxEmail.Text))
                 {
                     // if in alread in database
                     MessageBox.Show("This User Already Exists In DataBase!");
@@ -69,10 +69,18 @@ namespace TrainBookingSystem.Forms
                     // clear email field
                     this.textBoxEmail.Clear();
                 }
+                else if (this._dataBaseManager.DoElementExistInTable<String>("Passenger", "PhoneNumber", this.textBoxPhoneNumber.Text))
+                {
+                    // if in alread in database
+                    MessageBox.Show("This User Already Exists In DataBase!");
+
+                    // clear email field
+                    this.textBoxPhoneNumber.Clear();
+                }
                 else
                 {
                     // insret info into database
-                    if (this._dataBaseManager.InsertNewClient(textBoxUsername.Text, "", this.textBoxEmail.Text, this.textBoxPhoneNumber.Text, this.textBoxPassword.Text))
+                    if (this._dataBaseManager.InsertNewPassenger(textBoxUsername.Text, this.textBoxEmail.Text, this.textBoxPhoneNumber.Text, this.comboBox1.Text, this.textBoxPassword.Text))
                     {
                         // confverming message
                         MessageBox.Show("!! You Have Been Registered Succefully !!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
