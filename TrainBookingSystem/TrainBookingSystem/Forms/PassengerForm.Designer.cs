@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PassengerForm));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -39,7 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.labelTime = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +50,7 @@
             this.btnWorks = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -115,7 +113,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(223, 49);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(754, 100);
+            this.panel4.Size = new System.Drawing.Size(1095, 102);
             this.panel4.TabIndex = 5;
             // 
             // label3
@@ -136,7 +134,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
-            this.button2.Location = new System.Drawing.Point(697, 0);
+            this.button2.Location = new System.Drawing.Point(1038, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(57, 49);
             this.button2.TabIndex = 2;
@@ -146,24 +144,12 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.labelTime);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(223, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(754, 49);
+            this.panel3.Size = new System.Drawing.Size(1095, 49);
             this.panel3.TabIndex = 3;
-            // 
-            // labelTime
-            // 
-            this.labelTime.AutoSize = true;
-            this.labelTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(194)))));
-            this.labelTime.Location = new System.Drawing.Point(71, 17);
-            this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(106, 23);
-            this.labelTime.TabIndex = 8;
-            this.labelTime.Text = "HH:MM:SS";
             // 
             // panel2
             // 
@@ -185,7 +171,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(175, 3);
+            this.button1.Location = new System.Drawing.Point(163, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(46, 44);
             this.button1.TabIndex = 1;
@@ -247,7 +233,7 @@
             this.btnAboutUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAboutUs.ForeColor = System.Drawing.Color.White;
             this.btnAboutUs.Image = ((System.Drawing.Image)(resources.GetObject("btnAboutUs.Image")));
-            this.btnAboutUs.Location = new System.Drawing.Point(3, 1136);
+            this.btnAboutUs.Location = new System.Drawing.Point(3, 1316);
             this.btnAboutUs.Name = "btnAboutUs";
             this.btnAboutUs.Size = new System.Drawing.Size(46, 44);
             this.btnAboutUs.TabIndex = 1;
@@ -276,6 +262,7 @@
             this.btnContractors.Text = "     New Trip";
             this.btnContractors.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnContractors.UseVisualStyleBackColor = true;
+            this.btnContractors.Click += new System.EventHandler(this.btnContractors_Click);
             // 
             // panelLeft
             // 
@@ -291,7 +278,7 @@
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(223, 571);
+            this.panelLeft.Size = new System.Drawing.Size(223, 751);
             this.panelLeft.TabIndex = 4;
             // 
             // btnWorks
@@ -325,21 +312,29 @@
             this.btnDashboard.Text = "     Dashboard";
             this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // panelContainer
             // 
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(0, 0);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(977, 571);
+            this.panelContainer.Size = new System.Drawing.Size(455, 34);
             this.panelContainer.TabIndex = 6;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Location = new System.Drawing.Point(223, 151);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1095, 600);
+            this.mainPanel.TabIndex = 7;
             // 
             // PassengerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(977, 571);
+            this.ClientSize = new System.Drawing.Size(1318, 751);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelLeft);
@@ -355,7 +350,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -365,8 +359,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Timer timer1;
         private Label label4;
         private Label lblRole;
         private Label lblTitle;
@@ -387,7 +379,7 @@
         private Panel panelLeft;
         private Button btnDashboard;
         private Panel panelContainer;
-        private Label labelTime;
         private Button btnWorks;
+        private Panel mainPanel;
     }
 }
