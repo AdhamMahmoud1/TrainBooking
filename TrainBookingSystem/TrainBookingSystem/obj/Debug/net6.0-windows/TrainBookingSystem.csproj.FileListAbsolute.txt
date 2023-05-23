@@ -113,3 +113,5 @@ C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\ob
 C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Properties.Resources.resources
 C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.User_Controls.RegisterTrip.resources
 C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.User_Controls.UC_DashBoard.resources
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.MyTripsForm.resources
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.MyProfileForm.resources
