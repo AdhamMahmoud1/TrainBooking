@@ -165,6 +165,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "-";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel2
             // 
@@ -240,6 +241,7 @@
             this.btnJobs.Text = "     My Trips";
             this.btnJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnJobs.UseVisualStyleBackColor = true;
+            this.btnJobs.Click += new System.EventHandler(this.btnJobs_Click);
             // 
             // btnAboutUs
             // 
@@ -311,6 +313,7 @@
             this.btnWorks.Text = "     Profile";
             this.btnWorks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnWorks.UseVisualStyleBackColor = true;
+            this.btnWorks.Click += new System.EventHandler(this.btnWorks_Click);
             // 
             // btnDashboard
             // 

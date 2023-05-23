@@ -1,4 +1,5 @@
-﻿using ServiceStack.Text;
+﻿using Org.BouncyCastle.Asn1.X509;
+using ServiceStack.Text;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,7 +53,7 @@ namespace TrainBookingSystem.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             // close the form
-            this.Close();
+            Application.Exit();
         }
 
 
@@ -66,6 +67,19 @@ namespace TrainBookingSystem.Forms
 
             uc.Dock = DockStyle.Fill;
             this.mainPanel.Controls.Add(uc);
+
+        }
+
+        private void LoadForm(Form form)
+        {
+            if (this.mainPanel.Controls.Count > 0)
+            {
+                this.mainPanel.Controls.RemoveAt(0);
+            }
+
+            form.TopLevel= false;
+            this.mainPanel.Controls.Add(form);
+            form.Show();
 
         }
 
@@ -87,5 +101,25 @@ namespace TrainBookingSystem.Forms
             LoadControler(uC);
         }
 
+        private void btnJobs_Click(object sender, EventArgs e)
+        {
+            // title
+            this.lblTitle.Text = "My Trips";
+
+            LoadForm(new MyTripsForm(this.passenger));
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnWorks_Click(object sender, EventArgs e)
+        {
+            // title
+            this.lblTitle.Text = "Profile";
+
+            LoadForm(new MyProfileForm());
+        }
     }
 }
