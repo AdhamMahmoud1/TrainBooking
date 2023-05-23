@@ -14,10 +14,37 @@ namespace TrainBookingSystem.Forms
     public partial class AddTrip : Form
     {
         private AdminForm adminForm;
-        public AddTrip(AdminForm admin)
+        public AddTrip(AdminForm adminForm)
         {
-            InitializeComponent(GetAddTripButton());
-            this.adminForm = admin;
+            InitializeComponent();
+            this.adminForm = adminForm;
+        }
+
+        public AddTrip()
+        {
+        }
+
+        private void labelEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddTrainButton_Click(object sender, EventArgs e)
+        {
+
+            DataBaseManager db = new DataBaseManager();
+            int TrainID = Convert.ToInt32(this.textBoxTrainID.Text);
+            int Price =Convert.ToInt32(this.textBoxPrice.Text);
+           
+           db.InsertNewTrip(TrainID, this.textBoxSource.Text, this.textBoxDest.Text, this.textboxDate.Text, this.textBoxArrival.Text, Price);
+            MessageBox.Show("Trip Added Successfully");
+            this.Close();
+            adminForm.Show();
+        }
+
+        private void textBoxArrival_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void AddTrip_Load(object sender, EventArgs e)
@@ -25,45 +52,7 @@ namespace TrainBookingSystem.Forms
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void label3Date_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddTripButton_Click(object sender, EventArgs e)
-        {
-            DataBaseManager db = new DataBaseManager();
-            db.InsertNewTrip(Convert.ToInt32(this.textBox5TrainID.Text), this.textBoxNumOfSource.Text, this.textboxDestination.Text, Convert.ToDateTime(this.textBox2Date.Text), Convert.ToDateTime(this.textBox4ArrivalDate.Text), Convert.ToDecimal(this.textBox3Price.Text));
-            MessageBox.Show("Trip Added Successfully");
-            this.Close();
-            adminForm.Show();
-
-        }
-
-        private void textBox5TrainID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxNumOfSource_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2Date_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3Price_TextChanged(object sender, EventArgs e)
+        private void textBoxPrice_TextChanged(object sender, EventArgs e)
         {
 
         }

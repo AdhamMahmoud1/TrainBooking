@@ -184,7 +184,7 @@ namespace TrainBookingSystem.Services
         }
 
 
-        public bool InsertNewTrip(int TrainID = 0, String source = "", String destination = "", DateTime date = new DateTime(), DateTime arrivalDate = new DateTime(), decimal price = 0)
+        public bool InsertNewTrip(int TrainID = 0, String source = "", String destination = "", String date = "", String arrivalDate = "", int price = 0)
         {
             // flag
             bool inserted = false;
