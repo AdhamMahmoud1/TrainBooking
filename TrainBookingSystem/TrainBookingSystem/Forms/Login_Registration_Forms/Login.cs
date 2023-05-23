@@ -34,7 +34,7 @@ namespace TrainBookingSystem.Forms
             get { return _dataBaseManager; }
 
             set { _dataBaseManager = value; }
-            
+
         }
 
         public bool IsLoggedInAsAdmin
@@ -54,11 +54,11 @@ namespace TrainBookingSystem.Forms
             // if password is checked unmask it, else leave it as it is.
             if (CheckBoxShowpassword.Checked)
             {
-                this.textBoxPassword.PasswordChar= '\0';
+                this.textBoxPassword.PasswordChar = '\0';
             }
             else
             {
-                this.textBoxPassword.PasswordChar= '*';
+                this.textBoxPassword.PasswordChar = '*';
             }
         }
 
@@ -99,8 +99,8 @@ namespace TrainBookingSystem.Forms
             }
         }
 
-        
-        
+
+
         private void LoginAsCustomerButton_Click(object sender, EventArgs e)
         {
 
@@ -153,7 +153,7 @@ namespace TrainBookingSystem.Forms
         }
 
 
-        
+
         public Admin GetLoggedinAdminFromDB()
         {
             // empty admin
@@ -182,7 +182,7 @@ namespace TrainBookingSystem.Forms
                     MessageBox.Show("Admin Hasn't LoggedIn Yet!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -278,5 +278,9 @@ namespace TrainBookingSystem.Forms
             return flag;
         }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
