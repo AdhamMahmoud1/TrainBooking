@@ -93,3 +93,16 @@ C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\ob
 C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AddTrip.resources
 C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AdminForm.resources
 C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Properties.Resources.resources
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.csproj.AssemblyReference.cache
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AddTrain.resources
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AddTrip.resources
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AdminForm.resources
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Properties.Resources.resources
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.csproj.GenerateResource.cache
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.AssemblyInfoInputs.cache
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.AssemblyInfo.cs
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.csproj.CoreCompileInputs.cache
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.dll
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\refint\TrainBookingSystem.dll
+C:\Users\fadyk\OneDrive\Desktop\New folder (2)\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.pdb
