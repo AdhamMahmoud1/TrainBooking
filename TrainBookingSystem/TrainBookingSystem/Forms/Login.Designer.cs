@@ -28,183 +28,183 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.labelSignUp = new System.Windows.Forms.Label();
-            this.labelDontHaveAnAccount = new System.Windows.Forms.Label();
-            this.LoginAsCustomerButton = new System.Windows.Forms.Button();
-            this.CheckBoxShowpassword = new System.Windows.Forms.CheckBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.lablePassword = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.labelEmail = new System.Windows.Forms.Label();
-            this.LoginInHeader = new System.Windows.Forms.Label();
-            this.emailError = new System.Windows.Forms.ErrorProvider(this.components);
-            this.passwordError = new System.Windows.Forms.ErrorProvider(this.components);
-            this.LoginAdmin = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.emailError)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passwordError)).BeginInit();
-            this.SuspendLayout();
+            labelSignUp = new Label();
+            labelDontHaveAnAccount = new Label();
+            LoginAsCustomerButton = new Button();
+            CheckBoxShowpassword = new CheckBox();
+            textBoxPassword = new TextBox();
+            lablePassword = new Label();
+            textBoxEmail = new TextBox();
+            labelEmail = new Label();
+            LoginInHeader = new Label();
+            emailError = new ErrorProvider(components);
+            passwordError = new ErrorProvider(components);
+            LoginAdmin = new Button();
+            ((System.ComponentModel.ISupportInitialize)emailError).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)passwordError).BeginInit();
+            SuspendLayout();
             // 
             // labelSignUp
             // 
-            this.labelSignUp.AutoSize = true;
-            this.labelSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelSignUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(194)))));
-            this.labelSignUp.Location = new System.Drawing.Point(148, 544);
-            this.labelSignUp.Name = "labelSignUp";
-            this.labelSignUp.Size = new System.Drawing.Size(74, 23);
-            this.labelSignUp.TabIndex = 30;
-            this.labelSignUp.Text = "Sign Up";
-            this.labelSignUp.Click += new System.EventHandler(this.labelSignUp_Click);
+            labelSignUp.AutoSize = true;
+            labelSignUp.Cursor = Cursors.Hand;
+            labelSignUp.ForeColor = Color.FromArgb(91, 92, 194);
+            labelSignUp.Location = new Point(148, 544);
+            labelSignUp.Name = "labelSignUp";
+            labelSignUp.Size = new Size(61, 19);
+            labelSignUp.TabIndex = 30;
+            labelSignUp.Text = "Sign Up";
+            labelSignUp.Click += labelSignUp_Click;
             // 
             // labelDontHaveAnAccount
             // 
-            this.labelDontHaveAnAccount.AutoSize = true;
-            this.labelDontHaveAnAccount.Location = new System.Drawing.Point(92, 521);
-            this.labelDontHaveAnAccount.Name = "labelDontHaveAnAccount";
-            this.labelDontHaveAnAccount.Size = new System.Drawing.Size(203, 23);
-            this.labelDontHaveAnAccount.TabIndex = 31;
-            this.labelDontHaveAnAccount.Text = "Don\'t Have An Account?";
+            labelDontHaveAnAccount.AutoSize = true;
+            labelDontHaveAnAccount.Location = new Point(92, 521);
+            labelDontHaveAnAccount.Name = "labelDontHaveAnAccount";
+            labelDontHaveAnAccount.Size = new Size(169, 19);
+            labelDontHaveAnAccount.TabIndex = 31;
+            labelDontHaveAnAccount.Text = "Don't Have An Account?";
             // 
             // LoginAsCustomerButton
             // 
-            this.LoginAsCustomerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(194)))));
-            this.LoginAsCustomerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.LoginAsCustomerButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginAsCustomerButton.FlatAppearance.BorderSize = 0;
-            this.LoginAsCustomerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginAsCustomerButton.ForeColor = System.Drawing.Color.White;
-            this.LoginAsCustomerButton.Location = new System.Drawing.Point(37, 459);
-            this.LoginAsCustomerButton.Name = "LoginAsCustomerButton";
-            this.LoginAsCustomerButton.Size = new System.Drawing.Size(299, 48);
-            this.LoginAsCustomerButton.TabIndex = 29;
-            this.LoginAsCustomerButton.Text = "Login As Customer";
-            this.LoginAsCustomerButton.UseMnemonic = false;
-            this.LoginAsCustomerButton.UseVisualStyleBackColor = false;
-            this.LoginAsCustomerButton.Click += new System.EventHandler(this.LoginAsCustomerButton_Click);
+            LoginAsCustomerButton.BackColor = Color.FromArgb(91, 92, 194);
+            LoginAsCustomerButton.BackgroundImageLayout = ImageLayout.None;
+            LoginAsCustomerButton.Cursor = Cursors.Hand;
+            LoginAsCustomerButton.FlatAppearance.BorderSize = 0;
+            LoginAsCustomerButton.FlatStyle = FlatStyle.Flat;
+            LoginAsCustomerButton.ForeColor = Color.White;
+            LoginAsCustomerButton.Location = new Point(37, 459);
+            LoginAsCustomerButton.Name = "LoginAsCustomerButton";
+            LoginAsCustomerButton.Size = new Size(299, 48);
+            LoginAsCustomerButton.TabIndex = 29;
+            LoginAsCustomerButton.Text = "Login As Customer";
+            LoginAsCustomerButton.UseMnemonic = false;
+            LoginAsCustomerButton.UseVisualStyleBackColor = false;
+            LoginAsCustomerButton.Click += LoginAsCustomerButton_Click;
             // 
             // CheckBoxShowpassword
             // 
-            this.CheckBoxShowpassword.AutoSize = true;
-            this.CheckBoxShowpassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CheckBoxShowpassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CheckBoxShowpassword.Location = new System.Drawing.Point(185, 319);
-            this.CheckBoxShowpassword.Name = "CheckBoxShowpassword";
-            this.CheckBoxShowpassword.Size = new System.Drawing.Size(151, 27);
-            this.CheckBoxShowpassword.TabIndex = 28;
-            this.CheckBoxShowpassword.Text = "Show Password";
-            this.CheckBoxShowpassword.UseVisualStyleBackColor = true;
-            this.CheckBoxShowpassword.CheckedChanged += new System.EventHandler(this.CheckBoxShowpassword_CheckedChanged);
+            CheckBoxShowpassword.AutoSize = true;
+            CheckBoxShowpassword.Cursor = Cursors.Hand;
+            CheckBoxShowpassword.FlatStyle = FlatStyle.Flat;
+            CheckBoxShowpassword.Location = new Point(185, 319);
+            CheckBoxShowpassword.Name = "CheckBoxShowpassword";
+            CheckBoxShowpassword.Size = new Size(129, 23);
+            CheckBoxShowpassword.TabIndex = 28;
+            CheckBoxShowpassword.Text = "Show Password";
+            CheckBoxShowpassword.UseVisualStyleBackColor = true;
+            CheckBoxShowpassword.CheckedChanged += CheckBoxShowpassword_CheckedChanged;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPassword.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBoxPassword.Location = new System.Drawing.Point(37, 285);
-            this.textBoxPassword.Multiline = true;
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(299, 28);
-            this.textBoxPassword.TabIndex = 24;
+            textBoxPassword.BackColor = Color.FromArgb(230, 231, 233);
+            textBoxPassword.BorderStyle = BorderStyle.None;
+            textBoxPassword.Font = new Font("MS Reference Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPassword.ForeColor = SystemColors.InfoText;
+            textBoxPassword.Location = new Point(37, 285);
+            textBoxPassword.Multiline = true;
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.PasswordChar = '*';
+            textBoxPassword.Size = new Size(299, 28);
+            textBoxPassword.TabIndex = 24;
             // 
             // lablePassword
             // 
-            this.lablePassword.AutoSize = true;
-            this.lablePassword.Location = new System.Drawing.Point(37, 259);
-            this.lablePassword.Name = "lablePassword";
-            this.lablePassword.Size = new System.Drawing.Size(84, 23);
-            this.lablePassword.TabIndex = 20;
-            this.lablePassword.Text = "Password";
+            lablePassword.AutoSize = true;
+            lablePassword.Location = new Point(37, 259);
+            lablePassword.Name = "lablePassword";
+            lablePassword.Size = new Size(73, 19);
+            lablePassword.TabIndex = 20;
+            lablePassword.Text = "Password";
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxEmail.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxEmail.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBoxEmail.Location = new System.Drawing.Point(37, 204);
-            this.textBoxEmail.Multiline = true;
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(299, 27);
-            this.textBoxEmail.TabIndex = 26;
+            textBoxEmail.BackColor = Color.FromArgb(230, 231, 233);
+            textBoxEmail.BorderStyle = BorderStyle.None;
+            textBoxEmail.Font = new Font("MS Reference Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxEmail.ForeColor = SystemColors.InfoText;
+            textBoxEmail.Location = new Point(37, 204);
+            textBoxEmail.Multiline = true;
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(299, 27);
+            textBoxEmail.TabIndex = 26;
             // 
             // labelEmail
             // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(37, 178);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(54, 23);
-            this.labelEmail.TabIndex = 22;
-            this.labelEmail.Text = "Email";
+            labelEmail.AutoSize = true;
+            labelEmail.Location = new Point(37, 178);
+            labelEmail.Name = "labelEmail";
+            labelEmail.Size = new Size(45, 19);
+            labelEmail.TabIndex = 22;
+            labelEmail.Text = "Email";
             // 
             // LoginInHeader
             // 
-            this.LoginInHeader.AutoSize = true;
-            this.LoginInHeader.Font = new System.Drawing.Font("MS Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LoginInHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(194)))));
-            this.LoginInHeader.Location = new System.Drawing.Point(117, 90);
-            this.LoginInHeader.Name = "LoginInHeader";
-            this.LoginInHeader.Size = new System.Drawing.Size(141, 33);
-            this.LoginInHeader.TabIndex = 19;
-            this.LoginInHeader.Text = "WELCOME";
-            this.LoginInHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            LoginInHeader.AutoSize = true;
+            LoginInHeader.Font = new Font("MS Gothic", 19.8F, FontStyle.Bold, GraphicsUnit.Point);
+            LoginInHeader.ForeColor = Color.FromArgb(91, 92, 194);
+            LoginInHeader.Location = new Point(117, 90);
+            LoginInHeader.Name = "LoginInHeader";
+            LoginInHeader.Size = new Size(117, 27);
+            LoginInHeader.TabIndex = 19;
+            LoginInHeader.Text = "WELCOME";
+            LoginInHeader.TextAlign = ContentAlignment.TopCenter;
             // 
             // emailError
             // 
-            this.emailError.ContainerControl = this;
+            emailError.ContainerControl = this;
             // 
             // passwordError
             // 
-            this.passwordError.ContainerControl = this;
+            passwordError.ContainerControl = this;
             // 
             // LoginAdmin
             // 
-            this.LoginAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(194)))));
-            this.LoginAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.LoginAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginAdmin.FlatAppearance.BorderSize = 0;
-            this.LoginAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginAdmin.ForeColor = System.Drawing.Color.White;
-            this.LoginAdmin.Location = new System.Drawing.Point(37, 405);
-            this.LoginAdmin.Name = "LoginAdmin";
-            this.LoginAdmin.Size = new System.Drawing.Size(299, 48);
-            this.LoginAdmin.TabIndex = 29;
-            this.LoginAdmin.Text = "Login As Admin";
-            this.LoginAdmin.UseVisualStyleBackColor = false;
-            this.LoginAdmin.Click += new System.EventHandler(this.LoginAsAdminButton_Click);
+            LoginAdmin.BackColor = Color.FromArgb(91, 92, 194);
+            LoginAdmin.BackgroundImageLayout = ImageLayout.None;
+            LoginAdmin.Cursor = Cursors.Hand;
+            LoginAdmin.FlatAppearance.BorderSize = 0;
+            LoginAdmin.FlatStyle = FlatStyle.Flat;
+            LoginAdmin.ForeColor = Color.White;
+            LoginAdmin.Location = new Point(37, 405);
+            LoginAdmin.Name = "LoginAdmin";
+            LoginAdmin.Size = new Size(299, 48);
+            LoginAdmin.TabIndex = 29;
+            LoginAdmin.Text = "Login As Admin";
+            LoginAdmin.UseVisualStyleBackColor = false;
+            LoginAdmin.Click += LoginAsAdminButton_Click;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(380, 622);
-            this.Controls.Add(this.labelSignUp);
-            this.Controls.Add(this.labelDontHaveAnAccount);
-            this.Controls.Add(this.LoginAdmin);
-            this.Controls.Add(this.LoginAsCustomerButton);
-            this.Controls.Add(this.CheckBoxShowpassword);
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.lablePassword);
-            this.Controls.Add(this.textBoxEmail);
-            this.Controls.Add(this.labelEmail);
-            this.Controls.Add(this.LoginInHeader);
-            this.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.emailError)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passwordError)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(380, 622);
+            Controls.Add(labelSignUp);
+            Controls.Add(labelDontHaveAnAccount);
+            Controls.Add(LoginAdmin);
+            Controls.Add(LoginAsCustomerButton);
+            Controls.Add(CheckBoxShowpassword);
+            Controls.Add(textBoxPassword);
+            Controls.Add(lablePassword);
+            Controls.Add(textBoxEmail);
+            Controls.Add(labelEmail);
+            Controls.Add(LoginInHeader);
+            Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            ForeColor = Color.FromArgb(164, 165, 169);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login";
+            Load += Login_Load;
+            ((System.ComponentModel.ISupportInitialize)emailError).EndInit();
+            ((System.ComponentModel.ISupportInitialize)passwordError).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

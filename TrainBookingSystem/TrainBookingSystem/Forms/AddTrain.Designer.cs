@@ -48,6 +48,7 @@
             LoginInHeader.TabIndex = 39;
             LoginInHeader.Text = "ADD NEW TRAIN";
             LoginInHeader.TextAlign = ContentAlignment.TopCenter;
+            LoginInHeader.Click += LoginInHeader_Click;
             // 
             // AddTrainButton
             // 
@@ -80,6 +81,7 @@
             textBoxNumOfSeats.Name = "textBoxNumOfSeats";
             textBoxNumOfSeats.Size = new Size(262, 25);
             textBoxNumOfSeats.TabIndex = 45;
+            textBoxNumOfSeats.TextChanged += textBoxNumOfSeats_TextChanged;
             // 
             // labelUsername
             // 
@@ -91,6 +93,7 @@
             labelUsername.TabIndex = 41;
             labelUsername.Text = "Number of Seats";
             labelUsername.TextAlign = ContentAlignment.TopCenter;
+            labelUsername.Click += labelUsername_Click;
             // 
             // textboxKindOfTrain
             // 
@@ -104,6 +107,7 @@
             textboxKindOfTrain.Name = "textboxKindOfTrain";
             textboxKindOfTrain.Size = new Size(262, 29);
             textboxKindOfTrain.TabIndex = 47;
+            textboxKindOfTrain.TextChanged += textboxKindOfTrain_TextChanged;
             // 
             // labelEmail
             // 
@@ -114,6 +118,7 @@
             labelEmail.Size = new Size(99, 20);
             labelEmail.TabIndex = 43;
             labelEmail.Text = "Kind of Train";
+            labelEmail.Click += labelEmail_Click;
             // 
             // AddTrain
             // 
@@ -128,6 +133,7 @@
             Controls.Add(LoginInHeader);
             Name = "AddTrain";
             Text = "AddTrain";
+            Load += AddTrain_Load;
             ResumeLayout(false);
             PerformLayout();
         }

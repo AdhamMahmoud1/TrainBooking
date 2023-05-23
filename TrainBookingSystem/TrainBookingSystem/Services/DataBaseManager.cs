@@ -16,6 +16,7 @@ namespace TrainBookingSystem.Services
     {
         private String connectionString;
         private SqlConnection connection;
+        private object price;
 
 
         /* Constructors */
@@ -68,6 +69,8 @@ namespace TrainBookingSystem.Services
                 connection = value;
             }
         }
+
+        public object TrainID { get; private set; }
 
 
         /* Insatnce Methods */
@@ -154,7 +157,7 @@ namespace TrainBookingSystem.Services
                 this.connection.Open();
 
                 // query
-                String query = $"INSERT INTO Train(TrainID, kind, seats) VALUES(1, @kind, @noSeats)";
+                String query = $"INSERT INTO Train(kind, seats) VALUES(@kind, @noSeats)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@kind", kind);
@@ -179,6 +182,52 @@ namespace TrainBookingSystem.Services
             // return flag
             return inserted;
         }
+
+
+        public bool InsertNewTrip(int TrainID = 0, String source = "", String destination = "", DateTime date = new DateTime(), DateTime arrivalDate = new DateTime(), decimal price = 0)
+        {
+            // flag
+            bool inserted = false;
+
+            try
+            {
+                // new connection
+                this.connection.Open();
+
+                // query
+                String query = $"INSERT INTO Trip(TrainID, source, destination, Date, arrivalTime, price) VALUES(@TrainID, @source, @destination, @Date, @arrivalTime, @price)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@TrainID", TrainID);
+                    command.Parameters.AddWithValue("@source", source);
+                    command.Parameters.AddWithValue("@destination", destination);
+                    command.Parameters.AddWithValue("@Date", date);
+                    command.Parameters.AddWithValue("@arrivalTime", arrivalDate);
+                    command.Parameters.AddWithValue("@price", price);
+
+
+
+
+                    // get number of row affected to know if they been inserted or not
+                    int rowAffected = command.ExecuteNonQuery();
+
+                    if (rowAffected > 0) { inserted = true; }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception Caught", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // close connection
+            this.connection.Close();
+
+            // return flag
+            return inserted;
+        }
+
+
 
         public bool InsertNewClient(String firstName="", String lastName="", String email="", String phoneNumber="", String password="")
         {
