@@ -9,6 +9,7 @@ using Microsoft.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Xml.Linq;
 using System.Globalization;
+using System.Data;
 
 namespace TrainBookingSystem.Services
 {
@@ -23,10 +24,8 @@ namespace TrainBookingSystem.Services
         {
             // build the connection
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "DESKTOP-FR4U3I0";
+            builder.DataSource = "ADEL";
             builder.InitialCatalog = "BookingTrain";
-            //builder.UserID = "FADYKAMAL/fadyk";
-            //builder.Password = "";
             builder.TrustServerCertificate= true;
             builder.IntegratedSecurity = true;
             this.connectionString = builder.ToString();
@@ -106,7 +105,7 @@ namespace TrainBookingSystem.Services
             }
         }
 
-        public bool DoElementExistInTable<T>(string tableName = "Users", string columnName = "Email", T element = default)
+        public bool DoElementExistInTable<T>(string tableName = "passenger", string columnName = "Email", T element = default)
         {
             bool exists = false;
 
@@ -154,19 +153,18 @@ namespace TrainBookingSystem.Services
                 this.connection.Open();
 
                 // query
-                String query = $"INSERT INTO Train(TrainID, kind, seats) VALUES(1, @kind, @noSeats)";
+                String query = "INSERT INTO Train(kind, seats) VALUES(@kind, @noSeats)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@kind", kind);
                     command.Parameters.AddWithValue("@noSeats", noSeats);
-                  
-
 
                     // get number of row affected to know if they been inserted or not
                     int rowAffected = command.ExecuteNonQuery();
 
                     if (rowAffected > 0) { inserted = true; }
                 }
+                MessageBox.Show("Train is Added", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (SqlException ex)
             {
@@ -179,8 +177,40 @@ namespace TrainBookingSystem.Services
             // return flag
             return inserted;
         }
+        /*public bool UpdateTrain(string kind ="", int noSeats = 0) 
+        {
+            bool inserted = false;
+            try
+            {
+                this.connection.Open();
+                // query
+                String query = $"UPDAte Train(kind, seats) VALUES(@kind, @noSeats)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@kind", kind);
+                    command.Parameters.AddWithValue("@noSeats", noSeats);
 
-        public bool InsertNewClient(String firstName="", String lastName="", String email="", String phoneNumber="", String password="")
+
+
+                    // get number of row affected to know if they been inserted or not
+                    int rowAffected = command.ExecuteNonQuery();
+
+                    if (rowAffected > 0) { inserted = true; }
+                }
+                MessageBox.Show("Train is Added", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception Caught", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // close connection
+            this.connection.Close();
+
+
+            return inserted;
+        }*/
+        public bool InsertNewClient(String name = "", String email="", String phoneNumber="", String password="", String SSN = "", String gender = "")
         {
             // flag
             bool inserted = false;
@@ -191,15 +221,15 @@ namespace TrainBookingSystem.Services
                 this.connection.Open();
 
                 // query
-                String query = $"INSERT INTO Users(FirstName, LastName, Email, PhoneNumber, Password) VALUES(@firstname, @lastname, @email, @phonenumber, @password)";
+                String query = $"INSERT INTO passenger(name, email, phone, PASSWORD, SSN, gender) VALUES(@name, @email, @phonenumber, @password, @SSN, @gender)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@firstname", firstName);
-                    command.Parameters.AddWithValue("@lastname", lastName);
+                    command.Parameters.AddWithValue("@name", name);
                     command.Parameters.AddWithValue("@email", email);
-                    command.Parameters.AddWithValue("@phonenumber", phoneNumber);
+                    command.Parameters.AddWithValue("@phoneNumber", phoneNumber);
                     command.Parameters.AddWithValue("@password", password);
-
+                    command.Parameters.AddWithValue("@SSN", SSN);
+                    command.Parameters.AddWithValue("@gender", gender);
 
                     // get number of row affected to know if they been inserted or not
                     int rowAffected = command.ExecuteNonQuery();
@@ -219,7 +249,7 @@ namespace TrainBookingSystem.Services
             return inserted;
         }
 
-        public SqlDataReader GetUserFromDB<T>(String tableName="Users", String columnName="Email", T element=default)
+        public SqlDataReader GetUserFromDB<T>(String tableName = "passenger", String columnName="email", T element=default)
         {
             SqlDataReader reader = null;
 
@@ -252,7 +282,18 @@ namespace TrainBookingSystem.Services
             // reutrn datareader
             return reader;
         }
-       
 
+        public DataTable LoadTrainDetails()
+        {
+            DataTable table = new DataTable();
+            string query = "SELECT * FROM Train";
+            connection.Open();
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.Fill(table);
+            connection.Close();
+
+            return table;
+        }
     }
 }

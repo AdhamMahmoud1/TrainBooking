@@ -10,8 +10,9 @@ namespace TrainBookingSystem.Models
     {
         /* Instance Attributes */
         private int adminId;
-        private String firstName;
-        private String lastName;
+        private string adminSSN;
+        private String name;
+        private String gender;
         private String email;
         private String phoneNumber;
         private String password;
@@ -21,20 +22,20 @@ namespace TrainBookingSystem.Models
         public Admin()
         {
             // init attributes
-            this.adminId = 0;
-            this.firstName = "None";
-            this.lastName = "None";
+            this.adminSSN = "None";
+            this.name = "None";
+            this.gender = "None";
             this.email = "None";
             this.phoneNumber = "None";
             this.password = "None";
         }
 
-        public Admin(int adminId, String firstName, String lastName, String email, String phoneNumber, String password)
+        public Admin(string adminSSN, String name, String gender, String email, String phoneNumber, String password)
         {
             // init attributes
-            this.adminId= adminId;
-            this.firstName= firstName;
-            this.lastName= lastName;
+            this.adminSSN= adminSSN;
+            this.name= name;
+            this.gender= gender;
             this.email= email;
             this.phoneNumber= phoneNumber;
             this.password = password;
@@ -43,9 +44,9 @@ namespace TrainBookingSystem.Models
 
 
         /*  Setters And Getters (encapsulation) */
-        public int AdminId { get { return adminId;} set { adminId = value; } }
-        public String FirstName { get { return firstName;} set { firstName = value; } }
-        public String LastName { get { return lastName;} set { lastName = value; } }
+        public string AdminSSN { get { return adminSSN; } set { adminSSN = value; } }
+        public String Name { get { return name; } set { name = value; } }
+        public String Gender { get { return gender;} set { gender = value; } }
         public String Email { get { return email;} set { email = value; } }
         public String PhoneNumber { get { return phoneNumber;} set { phoneNumber = value; } }
         public String Password { get { return password; } set { password = value; } }
@@ -54,7 +55,7 @@ namespace TrainBookingSystem.Models
         /*  Instance Methods */
         public void Print()
         {
-            MessageBox.Show($"Id: {this.adminId}\nName: {this.firstName + " " + this.lastName}\nEmail: {this.email}\nPhoneNumber: {this.phoneNumber}\nPassword: {this.password}", "Admin Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Id: {this.adminSSN}\nName: {this.name }\nGender: {this.Gender}\nEmail: {this.email}\nPhoneNumber: {this.phoneNumber}\nPassword: {this.password}", "Admin Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
             

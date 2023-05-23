@@ -34,7 +34,7 @@ namespace TrainBookingSystem.Forms
             get { return _dataBaseManager; }
 
             set { _dataBaseManager = value; }
-            
+
         }
 
         public bool IsLoggedInAsAdmin
@@ -47,25 +47,8 @@ namespace TrainBookingSystem.Forms
             get { return isLoggedInAsCustomer; }
         }
 
-
-        /* Instance Methods */
-        private void CheckBoxShowpassword_CheckedChanged(object sender, EventArgs e)
-        {
-            // if password is checked unmask it, else leave it as it is.
-            if (CheckBoxShowpassword.Checked)
-            {
-                this.textBoxPassword.PasswordChar= '\0';
-            }
-            else
-            {
-                this.textBoxPassword.PasswordChar= '*';
-            }
-        }
-
-
         private void LoginAsAdminButton_Click(object sender, EventArgs e)
         {
-
             // validate
             if (IsValidInputFields())
             {
@@ -83,20 +66,20 @@ namespace TrainBookingSystem.Forms
                 else
                 {
                     // message box, user logged in
-                    MessageBox.Show("Succesfully Logged In!, WELCOME Admin.", "Successful Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Succesfully Logged In!, WELCOME Admin.", "Successful Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     // set logged in = true
                     this.isLoggedInAsAdmin = true;
+                    this.Hide();
+                    AdminForm admin = new AdminForm(new Admin());
+                    admin.Show();
                 }
             }
         }
 
-        
-        
         private void LoginAsCustomerButton_Click(object sender, EventArgs e)
         {
-
             // validate
             if (IsValidInputFields())
             {
@@ -129,8 +112,20 @@ namespace TrainBookingSystem.Forms
             this.Hide();
         }
 
+        /* Instance Methods */
+        private void CheckBoxShowpassword_CheckedChanged(object sender, EventArgs e)
+        {
+            // if password is checked unmask it, else leave it as it is.
+            if (CheckBoxShowpassword.Checked)
+            {
+                this.textBoxPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                this.textBoxPassword.PasswordChar = '*';
+            }
+        }
 
-        
         public Admin GetLoggedinAdminFromDB()
         {
             // empty admin
@@ -146,12 +141,13 @@ namespace TrainBookingSystem.Forms
                     // store featched in amdin
                     while (reader.Read())
                     {
-                        admin.AdminId = (int)reader.GetValue(0);
-                        admin.FirstName = (string)reader.GetValue(1);
-                        admin.LastName = (string)reader.GetValue(2);
-                        admin.Email = (string)reader.GetValue(3);
-                        admin.PhoneNumber = (string)reader.GetValue(4);
-                        admin.Password = (string)reader.GetValue(5);
+                        admin.AdminSSN = (string)reader.GetValue(0);
+                        admin.Name = (string)reader.GetValue(1);
+                        admin.Gender = (string)reader.GetValue(2);
+                        admin.Password = (string)reader.GetValue(3);
+                        admin.Email = (string)reader.GetValue(4);
+                        admin.PhoneNumber = (string)reader.GetValue(5);
+
                     }
                 }
                 else
@@ -160,7 +156,7 @@ namespace TrainBookingSystem.Forms
                     MessageBox.Show("Admin Hasn't LoggedIn Yet!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -171,7 +167,7 @@ namespace TrainBookingSystem.Forms
 
             return admin;
         }
-        
+
 
 
         ///////////////////////////////////////////////////////////////////////// Helper Functions //////////////////////////////////////////////////////////////////////////
@@ -256,5 +252,16 @@ namespace TrainBookingSystem.Forms
             return flag;
         }
 
+        private void labelEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

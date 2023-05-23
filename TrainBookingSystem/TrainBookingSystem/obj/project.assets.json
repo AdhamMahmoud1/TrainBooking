@@ -2003,19 +2003,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mahmo\\.nuget\\packages\\": {}
+    "C:\\Users\\mojar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FCAI\\second_semester\\DataBase_project\\TrainBooking\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\TrainBookingSystem.csproj",
+      "projectUniqueName": "C:\\Users\\mojar\\source\\repos\\TrainBookingSystem\\TrainBookingSystem\\TrainBookingSystem.csproj",
       "projectName": "TrainBookingSystem",
-      "projectPath": "D:\\FCAI\\second_semester\\DataBase_project\\TrainBooking\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\TrainBookingSystem.csproj",
-      "packagesPath": "C:\\Users\\mahmo\\.nuget\\packages\\",
-      "outputPath": "D:\\FCAI\\second_semester\\DataBase_project\\TrainBooking\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\obj\\",
+      "projectPath": "C:\\Users\\mojar\\source\\repos\\TrainBookingSystem\\TrainBookingSystem\\TrainBookingSystem.csproj",
+      "packagesPath": "C:\\Users\\mojar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mojar\\source\\repos\\TrainBookingSystem\\TrainBookingSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mahmo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mojar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

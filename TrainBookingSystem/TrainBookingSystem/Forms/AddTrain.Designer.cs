@@ -20,6 +20,11 @@
             base.Dispose(disposing);
         }
 
+        private TextBox GetTextBoxNumberOfSeats()
+        {
+            return textBoxNumberOfSeats;
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -28,116 +33,133 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Label LoginInHeader;
-            AddTrainButton = new Button();
-            textBoxNumOfSeats = new TextBox();
-            labelUsername = new Label();
-            textboxKindOfTrain = new TextBox();
-            labelEmail = new Label();
-            LoginInHeader = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTrain));
+            label2 = new Label();
+            label3 = new Label();
+            textBoxNumberOfSeats = new TextBox();
+            textBoxKindOfTrain = new TextBox();
+            AdminFormbutton = new Button();
+            AddButton = new Button();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // LoginInHeader
+            // label2
             // 
-            LoginInHeader.AutoSize = true;
-            LoginInHeader.Font = new Font("MS Gothic", 19.8F, FontStyle.Bold, GraphicsUnit.Point);
-            LoginInHeader.ForeColor = Color.FromArgb(91, 92, 194);
-            LoginInHeader.Location = new Point(307, 43);
-            LoginInHeader.Name = "LoginInHeader";
-            LoginInHeader.Size = new Size(207, 27);
-            LoginInHeader.TabIndex = 39;
-            LoginInHeader.Text = "ADD NEW TRAIN";
-            LoginInHeader.TextAlign = ContentAlignment.TopCenter;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(327, 133);
+            label2.Name = "label2";
+            label2.Size = new Size(161, 28);
+            label2.TabIndex = 2;
+            label2.Text = "Number Of Seats";
             // 
-            // AddTrainButton
+            // label3
             // 
-            AddTrainButton.BackColor = Color.FromArgb(91, 92, 194);
-            AddTrainButton.BackgroundImageLayout = ImageLayout.None;
-            AddTrainButton.Cursor = Cursors.Hand;
-            AddTrainButton.FlatAppearance.BorderSize = 0;
-            AddTrainButton.FlatStyle = FlatStyle.Flat;
-            AddTrainButton.Font = new Font("Nirmala UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            AddTrainButton.ForeColor = Color.White;
-            AddTrainButton.Location = new Point(269, 254);
-            AddTrainButton.Margin = new Padding(3, 2, 3, 2);
-            AddTrainButton.Name = "AddTrainButton";
-            AddTrainButton.Size = new Size(262, 36);
-            AddTrainButton.TabIndex = 49;
-            AddTrainButton.Text = "ADD TRAIN";
-            AddTrainButton.UseMnemonic = false;
-            AddTrainButton.UseVisualStyleBackColor = false;
-            AddTrainButton.Click += RegisterButton_Click;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(327, 226);
+            label3.Name = "label3";
+            label3.Size = new Size(124, 28);
+            label3.TabIndex = 3;
+            label3.Text = "Kind Of Train";
             // 
-            // textBoxNumOfSeats
+            // textBoxNumberOfSeats
             // 
-            textBoxNumOfSeats.BackColor = Color.FromArgb(230, 231, 233);
-            textBoxNumOfSeats.BorderStyle = BorderStyle.None;
-            textBoxNumOfSeats.Font = new Font("MS Reference Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNumOfSeats.ForeColor = SystemColors.InfoText;
-            textBoxNumOfSeats.Location = new Point(269, 110);
-            textBoxNumOfSeats.Margin = new Padding(3, 2, 3, 2);
-            textBoxNumOfSeats.Multiline = true;
-            textBoxNumOfSeats.Name = "textBoxNumOfSeats";
-            textBoxNumOfSeats.Size = new Size(262, 25);
-            textBoxNumOfSeats.TabIndex = 45;
+            textBoxNumberOfSeats.BackColor = Color.FromArgb(230, 231, 233);
+            textBoxNumberOfSeats.Location = new Point(327, 164);
+            textBoxNumberOfSeats.Name = "textBoxNumberOfSeats";
+            textBoxNumberOfSeats.Size = new Size(249, 27);
+            textBoxNumberOfSeats.TabIndex = 4;
             // 
-            // labelUsername
+            // textBoxKindOfTrain
             // 
-            labelUsername.AutoSize = true;
-            labelUsername.Font = new Font("Nirmala UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            labelUsername.Location = new Point(269, 91);
-            labelUsername.Name = "labelUsername";
-            labelUsername.Size = new Size(127, 20);
-            labelUsername.TabIndex = 41;
-            labelUsername.Text = "Number of Seats";
-            labelUsername.TextAlign = ContentAlignment.TopCenter;
+            textBoxKindOfTrain.BackColor = Color.FromArgb(230, 231, 233);
+            textBoxKindOfTrain.Location = new Point(327, 257);
+            textBoxKindOfTrain.Name = "textBoxKindOfTrain";
+            textBoxKindOfTrain.Size = new Size(249, 27);
+            textBoxKindOfTrain.TabIndex = 5;
             // 
-            // textboxKindOfTrain
+            // AdminFormbutton
             // 
-            textboxKindOfTrain.BackColor = Color.FromArgb(230, 231, 233);
-            textboxKindOfTrain.BorderStyle = BorderStyle.None;
-            textboxKindOfTrain.Font = new Font("MS Reference Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textboxKindOfTrain.ForeColor = SystemColors.InfoText;
-            textboxKindOfTrain.Location = new Point(269, 175);
-            textboxKindOfTrain.Margin = new Padding(3, 2, 3, 2);
-            textboxKindOfTrain.Multiline = true;
-            textboxKindOfTrain.Name = "textboxKindOfTrain";
-            textboxKindOfTrain.Size = new Size(262, 29);
-            textboxKindOfTrain.TabIndex = 47;
+            AdminFormbutton.BackColor = Color.FromArgb(91, 92, 194);
+            AdminFormbutton.ForeColor = Color.White;
+            AdminFormbutton.Location = new Point(583, 359);
+            AdminFormbutton.Margin = new Padding(3, 4, 3, 4);
+            AdminFormbutton.Name = "AdminFormbutton";
+            AdminFormbutton.Size = new Size(217, 53);
+            AdminFormbutton.TabIndex = 15;
+            AdminFormbutton.Text = "Back To Admin form";
+            AdminFormbutton.UseVisualStyleBackColor = false;
+            AdminFormbutton.Click += AdminFormbutton_Click;
             // 
-            // labelEmail
+            // AddButton
             // 
-            labelEmail.AutoSize = true;
-            labelEmail.Font = new Font("Nirmala UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            labelEmail.Location = new Point(269, 153);
-            labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(99, 20);
-            labelEmail.TabIndex = 43;
-            labelEmail.Text = "Kind of Train";
+            AddButton.BackColor = Color.FromArgb(91, 92, 194);
+            AddButton.ForeColor = Color.White;
+            AddButton.Location = new Point(87, 359);
+            AddButton.Margin = new Padding(3, 4, 3, 4);
+            AddButton.Name = "AddButton";
+            AddButton.Size = new Size(217, 53);
+            AddButton.TabIndex = 14;
+            AddButton.Text = "Add";
+            AddButton.UseVisualStyleBackColor = false;
+            AddButton.Click += AddButton_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("MS Gothic", 19.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(91, 92, 194);
+            label1.ImageAlign = ContentAlignment.MiddleRight;
+            label1.Location = new Point(327, 65);
+            label1.Name = "label1";
+            label1.Size = new Size(249, 33);
+            label1.TabIndex = 16;
+            label1.Text = "Add New Train";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(893, 564);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // AddTrain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(AddTrainButton);
-            Controls.Add(textBoxNumOfSeats);
-            Controls.Add(labelUsername);
-            Controls.Add(textboxKindOfTrain);
-            Controls.Add(labelEmail);
-            Controls.Add(LoginInHeader);
+            ClientSize = new Size(895, 562);
+            Controls.Add(label1);
+            Controls.Add(AdminFormbutton);
+            Controls.Add(AddButton);
+            Controls.Add(textBoxKindOfTrain);
+            Controls.Add(textBoxNumberOfSeats);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddTrain";
             Text = "AddTrain";
+            Load += AddTrain_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button AddTrainButton;
-        private TextBox textBoxNumOfSeats;
-        internal Label labelUsername;
-        private TextBox textboxKindOfTrain;
-        private Label labelEmail;
+        private Label label2;
+        private Label label3;
+        private TextBox textBoxNumberOfSeats;
+        private TextBox textBox1;
+        private TextBox textBoxKindOfTrain;
+        private Button AdminFormbutton;
+        private Button AddButton;
+        private Label label1;
+        private PictureBox pictureBox1;
     }
 }

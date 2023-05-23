@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace TrainBookingSystem.Services
 {
@@ -67,6 +68,21 @@ namespace TrainBookingSystem.Services
             // if is match return true else return the predefined answer = fals
             return rgx.IsMatch(email);
 
+        }
+        public bool IsValidSSN(string ssn)
+        {
+
+            // create a regex pattern to match the entered SSN with
+            rgx = new Regex(@"^\d{14}$");
+
+            // if is match return true else return the predefined answer = false
+            return rgx.IsMatch(ssn);
+        }
+
+        public bool IsValidGender(string gender)
+        {
+            rgx = new Regex(@"^(male|female)$");
+            return rgx.IsMatch(gender.ToLower());
         }
 
     }
