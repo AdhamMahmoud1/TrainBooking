@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Xml.Linq;
 using System.Globalization;
 using Org.BouncyCastle.Cms;
+using TrainBookingSystem.Models;
 
 namespace TrainBookingSystem.Services
 {
@@ -203,6 +204,83 @@ namespace TrainBookingSystem.Services
             return inserted;
         }
 
+        public bool InsertNewPassenger(Passenger passenger)
+        {
+            // flag
+            bool inserted = false;
+
+            try
+            {
+                // new connection
+                this.connection.Open();
+
+                // query
+                String query = $"INSERT INTO Passenger(Username, Email, PhoneNumber, Gender, Password) VALUES(@username, @email, @phoneNumber, @gender, @password)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@username", passenger.Username);
+                    command.Parameters.AddWithValue("@email", passenger.Email);
+                    command.Parameters.AddWithValue("@phonenumber", passenger.PhoneNumber);
+                    command.Parameters.AddWithValue("@gender", passenger.Gender);
+                    command.Parameters.AddWithValue("@password", passenger.Password);
+
+
+                    // get number of row affected to know if they been inserted or not
+                    int rowAffected = command.ExecuteNonQuery();
+
+                    if (rowAffected > 0) { inserted = true; }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception Caught", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // close connection
+            this.connection.Close();
+
+            // return flag
+            return inserted;
+        }
+
+
+        public bool InsertBookedTrip(int passengerId=0, int TripId = 0, DateTime BookingDate = new DateTime())
+        {
+            // flag
+            bool inserted = false;
+
+            try
+            {
+                // new connection
+                this.connection.Open();
+
+                // query
+                String query = $"INSERT INTO TripBookings(PassengerId, TripId, BookingDate) VALUES(@PassengerId, @TripId, @BookingDate)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PassengerId", passengerId);
+                    command.Parameters.AddWithValue("@TripId", TripId);
+                    command.Parameters.AddWithValue("@BookingDate", BookingDate);
+
+
+                    // get number of row affected to know if they been inserted or not
+                    int rowAffected = command.ExecuteNonQuery();
+
+                    if (rowAffected > 0) { inserted = true; }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception Caught", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // close connection
+            this.connection.Close();
+
+            // return flag
+            return inserted;
+        }
+
         public SqlDataReader GetUserFromDB<T>(String tableName= "Passenger", String columnName="Email", T element=default)
         {
             SqlDataReader reader = null;
@@ -236,7 +314,93 @@ namespace TrainBookingSystem.Services
             // reutrn datareader
             return reader;
         }
-       
+
+
+        public Passenger GetPassengerFromDataBase(String userEmail="Email")
+        {
+            SqlDataReader reader = null;
+
+            // connect to database
+            ConnectToDatabase();
+
+            // query 
+            String query = $"SELECT * FROM Passenger WHERE Email = @ElementValue";
+
+
+            // exute command
+            using (SqlCommand command = new SqlCommand(query, this.SqlConnection))
+            {
+                // replace @element valude with element name
+                command.Parameters.AddWithValue("@ElementValue", userEmail);
+
+                // store return in reader
+                try
+                {
+                    reader= command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+
+                        Passenger pass = new Passenger((int)reader.GetValue(0), reader.GetValue(1).ToString(), reader.GetValue(2).ToString(), reader.GetValue(3).ToString(), reader.GetValue(4).ToString(), reader.GetValue(5).ToString());
+                        pass.Print();   
+                        return pass;
+ 
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception appropriately for your application type
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return null;
+
+        }
+
+
+
+        //public Passenger GetAdminFromDataBase(String userEmail = "Email")
+        //{
+        //    SqlDataReader reader = null;
+
+        //    // connect to database
+        //    ConnectToDatabase();
+
+        //    // query 
+        //    String query = $"SELECT * FROM Admin WHERE Email = @ElementValue";
+
+
+        //    // exute command
+        //    using (SqlCommand command = new SqlCommand(query, this.SqlConnection))
+        //    {
+        //        // replace @element valude with element name
+        //        command.Parameters.AddWithValue("@ElementValue", userEmail);
+
+        //        // store return in reader
+        //        try
+        //        {
+        //            reader = command.ExecuteReader();
+
+        //            while (reader.Read())
+        //            {
+
+        //                Admin pass = new Admin((int)reader.GetValue(0), reader.GetValue(1).ToString(), reader.GetValue(2).ToString(), reader.GetValue(3).ToString(), reader.GetValue(4).ToString(), reader.GetValue(5),ToString());
+        //                return pass;
+
+        //            }
+
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            // Handle the exception appropriately for your application type
+        //            MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //    return null;
+
+        //}
+
 
     }
 }

@@ -9,14 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrainBookingSystem.Services;
+using TrainBookingSystem.Models;
 
 namespace TrainBookingSystem.User_Controls
 {
     public partial class RegisterTrip : UserControl
     {
         /* Instance attributes */
-        DataBaseManager _dataBaseManager;
-        DataTable _trips;
+        private DataBaseManager _dataBaseManager;
+        private DataTable _trips;
+        private Passenger _passenger;
+
 
         public RegisterTrip()
         {
@@ -27,6 +30,24 @@ namespace TrainBookingSystem.User_Controls
 
             // init datatable
             InitDataTable();
+
+            // init passenger with defualt values
+           this._passenger= new Passenger();
+        }
+
+
+        public RegisterTrip(Passenger passenger)
+        {
+            InitializeComponent();
+
+            // init database manager
+            this._dataBaseManager = new DataBaseManager();
+
+            // init datatable
+            InitDataTable();
+
+            // init passenger
+            this._passenger = passenger;
         }
 
         private void RegisterTrip_Load(object sender, EventArgs e)
@@ -167,7 +188,43 @@ namespace TrainBookingSystem.User_Controls
 
         private void buttonRegisterTrip_Click(object sender, EventArgs e)
         {
-            // insert into Trip Bookings
+            try
+            {
+                // works if user selected a row
+                if (dataGridViewTripsWithSourceAndDistination.SelectedRows.Count > 0)
+                {
+                    this._passenger.Print();
+                    // get selected from datagrid view to git trip id
+                    DataGridViewRow selectedRow = dataGridViewTripsWithSourceAndDistination.SelectedRows[0];
+
+                    // extract trip id
+                    int tripId = (int)selectedRow.Cells[0].Value;
+
+                    // genereate credentials
+                    DateTime date = DateTime.Now;
+
+                    // passenger id
+                    int passengerId = this._passenger.PassengerId;
+                    // insert into Trip Bookings
+                    if (this._dataBaseManager.InsertBookedTrip(passengerId, tripId, date))
+                    {
+                        // successful booking
+                        MessageBox.Show("Trip Bookeed Successfully!", "Successful Booking", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    // message to select row
+                    MessageBox.Show("Please Select The Trip You want To Book!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+            }
+            catch(Exception ex)
+            {
+                // message to select row
+                MessageBox.Show(ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+            
 
         }
     }
