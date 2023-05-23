@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using TrainBookingSystem.Forms.Admin_Forms;
 using TrainBookingSystem.Models;
 using TrainBookingSystem.Services;
 
@@ -90,6 +91,11 @@ namespace TrainBookingSystem.Forms
                         this.isLoggedInAsAdmin = true;
 
                         // call admin form
+                        Admin admin = this._dataBaseManager.GetAdminFromDataBase(this.textBoxEmail.Text);
+
+                        AdminForm form = new AdminForm(admin);
+                        form.ShowDialog();
+
                     }
                     else
                     {

@@ -1,22 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Forms\Login.cs">
+    <Compile Update="Forms\Admin_Forms\AddTrain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\MyProfile.cs">
+    <Compile Update="Forms\Admin_Forms\AddTrip.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\MyTrips.cs">
+    <Compile Update="Forms\Admin_Forms\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\PassengerForm.cs">
+    <Compile Update="Forms\Admin_Forms\UpdateTrain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Registration.cs">
+    <Compile Update="Forms\Admin_Forms\UpdateTrip.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\UpatePassengerInfo.cs">
+    <Compile Update="Forms\Login_Registration_Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Passegner_Forms\MyProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Passegner_Forms\MyTrips.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Passegner_Forms\PassengerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Login_Registration_Forms\Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Passegner_Forms\UpatePassengerInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="User Controls\RegisterTrip.cs">

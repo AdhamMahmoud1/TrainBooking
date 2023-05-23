@@ -116,3 +116,8 @@ C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\ob
 C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.MyTripsForm.resources
 C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.MyProfileForm.resources
 C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.UpatePassengerInfoForm.resources
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.Admin_Forms.AddTrain.resources
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.Admin_Forms.AddTrip.resources
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.Admin_Forms.AdminForm.resources
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.Admin_Forms.UpdateTrain.resources
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.Admin_Forms.UpdateTrip.resources

@@ -10,16 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Utilities\**" />
+    <EmbeddedResource Remove="Utilities\**" />
+    <None Remove="Utilities\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Assets\Icons\railway_Q19_icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Jenga.NET" Version="4.0.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Utilities\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +37,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Images\" />
   </ItemGroup>
 
 </Project>

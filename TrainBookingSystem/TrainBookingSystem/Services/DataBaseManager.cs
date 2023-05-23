@@ -238,6 +238,88 @@ namespace TrainBookingSystem.Services
             return inserted;
         }
 
+
+        public bool InsertNewTrain(String kind = "", int noSeats = 0)
+        {
+            // flag
+            bool inserted = false;
+
+            try
+            {
+                // new connection
+                this.connection.Open();
+
+                // query
+                String query = $"INSERT INTO Train(TrainType, NumberOfSeats) VALUES(@kind, @noSeats)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@kind", kind);
+                    command.Parameters.AddWithValue("@noSeats", noSeats);
+
+
+
+                    // get number of row affected to know if they been inserted or not
+                    int rowAffected = command.ExecuteNonQuery();
+
+                    if (rowAffected > 0) { inserted = true; }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception Caught", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // close connection
+            this.connection.Close();
+
+            // return flag
+            return inserted;
+        }
+
+
+        public bool InsertNewTrip(int TrainID = 0, String source = "", String destination = "", String date = "", String arrivalDate = "", int price = 0)
+        {
+            // flag
+            bool inserted = false;
+
+            try
+            {
+                // new connection
+                this.connection.Open();
+
+                // query
+                String query = $"INSERT INTO Trip(Source, Destination, DepartureTime, ArrivalTime,  TrainID) VALUES(@source, @destination, @Date, @arrivalTime, @TrainID)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@TrainID", TrainID);
+                    command.Parameters.AddWithValue("@source", source);
+                    command.Parameters.AddWithValue("@destination", destination);
+                    command.Parameters.AddWithValue("@Date", date);
+                    command.Parameters.AddWithValue("@arrivalTime", arrivalDate);
+
+
+
+                    // get number of row affected to know if they been inserted or not
+                    int rowAffected = command.ExecuteNonQuery();
+
+                    if (rowAffected > 0) { inserted = true; }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception Caught", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // close connection
+            this.connection.Close();
+
+            // return flag
+            return inserted;
+        }
+
+
+
         public bool InsertNewPassenger(Passenger passenger)
         {
             // flag
@@ -466,6 +548,53 @@ namespace TrainBookingSystem.Services
             }
 
             return new Passenger();
+        }
+
+        public Admin GetAdminFromDataBase(string userEmail = "Email")
+        {
+            // Connect to database
+            ConnectToDatabase();
+
+            // Query 
+            string query = $"SELECT * FROM Admin WHERE Email = @ElementValue";
+
+            // Execute command
+            using (SqlCommand command = new SqlCommand(query, this.SqlConnection))
+            {
+                // Replace @ElementValue with userEmail
+                command.Parameters.AddWithValue("@ElementValue", userEmail);
+
+                // Store return in reader
+                try
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Admin pass = new Admin(
+                            (int)reader.GetValue(0),
+                            reader.GetValue(1).ToString(),
+                            reader.GetValue(2).ToString(),
+                            reader.GetValue(3).ToString(),
+                            reader.GetValue(4).ToString(),
+                            reader.GetValue(5).ToString()
+                        );
+                        return pass;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception appropriately for your application type
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    // Close connection
+                    Disconnect();
+                }
+            }
+
+            return new Admin();
         }
 
         public Passenger GetPassengerFromDataBaseById(int id = 1)
