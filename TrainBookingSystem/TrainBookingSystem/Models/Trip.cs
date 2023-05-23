@@ -17,7 +17,5 @@ namespace TrainBookingSystem.Models
                 this.Trainid = value;
             }
         }
-
-
     }
 }

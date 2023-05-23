@@ -91,7 +91,6 @@ C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6
 C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AddTrain.resources
 C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AdminForm.resources
 C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.Login.resources
-C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.Passenger.resources
 C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.Registration.resources
 C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.UpdateTrain.resources
 C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Properties.Resources.resources
@@ -135,3 +134,5 @@ C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\bin\Debug\net6
 C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.csproj.CopyComplete
 C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.genruntimeconfig.cache
 C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\ref\TrainBookingSystem.dll
+C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AddTrip.resources
+C:\Users\mojar\source\repos\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.UpdateTrip.resources

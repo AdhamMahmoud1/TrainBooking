@@ -78,7 +78,7 @@ namespace TrainBookingSystem.Forms
             }
         }
 
-        private void LoginAsCustomerButton_Click(object sender, EventArgs e)
+        /*private void LoginAsCustomerButton_Click(object sender, EventArgs e)
         {
             // validate
             if (IsValidInputFields())
@@ -101,9 +101,16 @@ namespace TrainBookingSystem.Forms
 
                     // set logged in = true
                     this.isLoggedInAsCustomer = true;
+
+                    // Hide Login Form
+                    this.Hide();
+
+                    // call customer form
+                    PassengerForm passn = new PassengerForm(passenger);
+                    passn.ShowDialog();
                 }
             }
-        }
+        }*/
 
         private void labelSignUp_Click(object sender, EventArgs e)
         {

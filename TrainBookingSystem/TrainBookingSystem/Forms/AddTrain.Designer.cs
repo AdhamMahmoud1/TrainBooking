@@ -85,7 +85,7 @@
             // 
             AdminFormbutton.BackColor = Color.FromArgb(91, 92, 194);
             AdminFormbutton.ForeColor = Color.White;
-            AdminFormbutton.Location = new Point(583, 359);
+            AdminFormbutton.Location = new Point(666, 458);
             AdminFormbutton.Margin = new Padding(3, 4, 3, 4);
             AdminFormbutton.Name = "AdminFormbutton";
             AdminFormbutton.Size = new Size(217, 53);
@@ -98,7 +98,7 @@
             // 
             AddButton.BackColor = Color.FromArgb(91, 92, 194);
             AddButton.ForeColor = Color.White;
-            AddButton.Location = new Point(87, 359);
+            AddButton.Location = new Point(12, 458);
             AddButton.Margin = new Padding(3, 4, 3, 4);
             AddButton.Name = "AddButton";
             AddButton.Size = new Size(217, 53);

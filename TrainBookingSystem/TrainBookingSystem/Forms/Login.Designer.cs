@@ -120,7 +120,7 @@
             LoginAsCustomerButton.Text = "Login As Customer";
             LoginAsCustomerButton.UseMnemonic = false;
             LoginAsCustomerButton.UseVisualStyleBackColor = false;
-            LoginAsCustomerButton.Click += LoginAsCustomerButton_Click;
+            //LoginAsCustomerButton.Click += LoginAsCustomerButton_Click;
             // 
             // CheckBoxShowpassword
             // 

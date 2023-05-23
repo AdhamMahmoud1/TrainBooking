@@ -26,36 +26,41 @@ namespace TrainBookingSystem.Forms
 
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddTrainButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
             AddTrain train = new AddTrain();
             train.Show();
+            this.Hide();
         }
 
         private void UpdateTrainButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
             UpdateTrain train = new UpdateTrain();
             train.Show();
+            this.Hide();
         }
 
         private void LogOutButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Login log = new Login();
             log.Show();
+            this.Hide();
         }
+
+        private void AddTripButton_Click(object sender, EventArgs e)
+        {
+            AddTrip trip = new AddTrip();
+            trip.Show();
+            this.Hide();
+        }
+
+        private void UpdateTripButton_Click(object sender, EventArgs e)
+        {
+            UpdateTrip trip = new UpdateTrip();
+            trip.Show();
+            this.Hide();
+        }
+
     }
 }

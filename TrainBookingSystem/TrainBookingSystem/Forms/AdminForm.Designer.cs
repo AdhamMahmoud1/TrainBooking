@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             pictureBox1 = new PictureBox();
-            button2 = new Button();
-            button1 = new Button();
+            AddTripButton = new Button();
+            UpdateTripButton = new Button();
             label1 = new Label();
             UpdateTrainButton = new Button();
             AddTrainButton = new Button();
@@ -44,33 +44,35 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(894, 561);
+            pictureBox1.Size = new Size(915, 611);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // button2
+            // AddTripButton
             // 
-            button2.BackColor = Color.FromArgb(91, 92, 194);
-            button2.Location = new Point(356, 305);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.RightToLeft = RightToLeft.No;
-            button2.Size = new Size(190, 48);
-            button2.TabIndex = 9;
-            button2.Text = "Add Trip";
-            button2.UseVisualStyleBackColor = false;
+            AddTripButton.BackColor = Color.FromArgb(91, 92, 194);
+            AddTripButton.Location = new Point(356, 325);
+            AddTripButton.Margin = new Padding(3, 4, 3, 4);
+            AddTripButton.Name = "AddTripButton";
+            AddTripButton.RightToLeft = RightToLeft.No;
+            AddTripButton.Size = new Size(190, 48);
+            AddTripButton.TabIndex = 9;
+            AddTripButton.Text = "Add Trip";
+            AddTripButton.UseVisualStyleBackColor = false;
+            AddTripButton.Click += AddTripButton_Click;
             // 
-            // button1
+            // UpdateTripButton
             // 
-            button1.BackColor = Color.FromArgb(91, 92, 194);
-            button1.Location = new Point(356, 390);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.RightToLeft = RightToLeft.No;
-            button1.Size = new Size(190, 48);
-            button1.TabIndex = 8;
-            button1.Text = "Update Trip";
-            button1.UseVisualStyleBackColor = false;
+            UpdateTripButton.BackColor = Color.FromArgb(91, 92, 194);
+            UpdateTripButton.Location = new Point(356, 409);
+            UpdateTripButton.Margin = new Padding(3, 4, 3, 4);
+            UpdateTripButton.Name = "UpdateTripButton";
+            UpdateTripButton.RightToLeft = RightToLeft.No;
+            UpdateTripButton.Size = new Size(190, 48);
+            UpdateTripButton.TabIndex = 8;
+            UpdateTripButton.Text = "Update Trip";
+            UpdateTripButton.UseVisualStyleBackColor = false;
+            UpdateTripButton.Click += UpdateTripButton_Click;
             // 
             // label1
             // 
@@ -79,16 +81,16 @@
             label1.Font = new Font("MS Gothic", 19.8F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(91, 92, 194);
             label1.ImageAlign = ContentAlignment.MiddleRight;
-            label1.Location = new Point(260, 84);
+            label1.Location = new Point(259, 71);
             label1.Name = "label1";
-            label1.Size = new Size(375, 33);
+            label1.Size = new Size(393, 33);
             label1.TabIndex = 7;
-            label1.Text = "Welcome Sweety Admin";
+            label1.Text = "Welcome To Admin Page";
             // 
             // UpdateTrainButton
             // 
             UpdateTrainButton.BackColor = Color.FromArgb(91, 92, 194);
-            UpdateTrainButton.Location = new Point(356, 218);
+            UpdateTrainButton.Location = new Point(356, 239);
             UpdateTrainButton.Margin = new Padding(3, 4, 3, 4);
             UpdateTrainButton.Name = "UpdateTrainButton";
             UpdateTrainButton.RightToLeft = RightToLeft.No;
@@ -101,7 +103,7 @@
             // AddTrainButton
             // 
             AddTrainButton.BackColor = Color.FromArgb(91, 92, 194);
-            AddTrainButton.Location = new Point(356, 136);
+            AddTrainButton.Location = new Point(356, 156);
             AddTrainButton.Margin = new Padding(3, 4, 3, 4);
             AddTrainButton.Name = "AddTrainButton";
             AddTrainButton.Size = new Size(190, 48);
@@ -114,7 +116,7 @@
             // 
             LogOutButton.BackColor = SystemColors.Control;
             LogOutButton.ForeColor = SystemColors.ActiveCaptionText;
-            LogOutButton.Location = new Point(782, 501);
+            LogOutButton.Location = new Point(801, 546);
             LogOutButton.Margin = new Padding(3, 4, 3, 4);
             LogOutButton.Name = "LogOutButton";
             LogOutButton.RightToLeft = RightToLeft.No;
@@ -128,14 +130,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(895, 562);
+            ClientSize = new Size(914, 607);
             Controls.Add(LogOutButton);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(AddTripButton);
+            Controls.Add(UpdateTripButton);
             Controls.Add(label1);
             Controls.Add(UpdateTrainButton);
             Controls.Add(AddTrainButton);
             Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminForm";
             Text = "AdminForm";
             Load += AdminForm_Load;
@@ -147,8 +150,8 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Button button2;
-        private Button button1;
+        private Button AddTripButton;
+        private Button UpdateTripButton;
         private Label label1;
         private Button UpdateTrainButton;
         private Button AddTrainButton;

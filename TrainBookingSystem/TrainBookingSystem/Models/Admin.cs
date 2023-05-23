@@ -9,7 +9,6 @@ namespace TrainBookingSystem.Models
     public class Admin
     {
         /* Instance Attributes */
-        private int adminId;
         private string adminSSN;
         private String name;
         private String gender;

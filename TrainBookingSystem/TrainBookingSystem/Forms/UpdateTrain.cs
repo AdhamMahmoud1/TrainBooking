@@ -39,49 +39,7 @@ namespace TrainBookingSystem.Forms
             dataGridViewForTrains.DataSource = LoadTrainDetails();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /*private void UpdateButton_Click(object sender, EventArgs e)
-        {
-            
-        }*/
-
-        private void textBoxNumOfSeats_TextChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxKinfOfTrain_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewForTrains_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UpdateButton_Click_1(object sender, EventArgs e)
+        private void UpdateButton_Click(object sender, EventArgs e)
         {
             con.Open();
             String query = "UPDATE Train SET kind = @kind, seats = @seats WHERE TrainID= " + dataGridViewForTrains.CurrentRow.Cells[0].Value.ToString() + "";
@@ -105,11 +63,6 @@ namespace TrainBookingSystem.Forms
         {
             textBoxNumOfSeats.Text = dataGridViewForTrains.CurrentRow.Cells[1].Value.ToString();
             textBoxKindOFTrain.Text = (string)dataGridViewForTrains.CurrentRow.Cells[2].Value;
-
-        }
-
-        private void textBoxNumOfSeats_TextChanged_1(object sender, EventArgs e)
-        {
 
         }
     }

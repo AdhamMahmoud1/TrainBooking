@@ -43,10 +43,11 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.White;
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.Location = new Point(1, 3);
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(898, 557);
+            pictureBox1.Size = new Size(897, 562);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -54,7 +55,7 @@
             // 
             AdminFormbutton.BackColor = Color.FromArgb(91, 92, 194);
             AdminFormbutton.ForeColor = Color.White;
-            AdminFormbutton.Location = new Point(541, 453);
+            AdminFormbutton.Location = new Point(526, 431);
             AdminFormbutton.Margin = new Padding(3, 4, 3, 4);
             AdminFormbutton.Name = "AdminFormbutton";
             AdminFormbutton.Size = new Size(217, 53);
@@ -66,7 +67,7 @@
             // dataGridViewForTrains
             // 
             dataGridViewForTrains.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewForTrains.Location = new Point(220, 165);
+            dataGridViewForTrains.Location = new Point(204, 143);
             dataGridViewForTrains.Margin = new Padding(3, 4, 3, 4);
             dataGridViewForTrains.Name = "dataGridViewForTrains";
             dataGridViewForTrains.RowHeadersWidth = 51;
@@ -79,7 +80,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(541, 57);
+            label2.Location = new Point(526, 35);
             label2.Name = "label2";
             label2.Size = new Size(95, 20);
             label2.TabIndex = 11;
@@ -89,7 +90,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(136, 57);
+            label1.Location = new Point(121, 35);
             label1.Name = "label1";
             label1.Size = new Size(122, 20);
             label1.TabIndex = 10;
@@ -99,7 +100,7 @@
             // 
             textBoxKindOFTrain.BackColor = Color.FromArgb(230, 231, 233);
             textBoxKindOFTrain.ForeColor = Color.Black;
-            textBoxKindOFTrain.Location = new Point(541, 81);
+            textBoxKindOFTrain.Location = new Point(526, 59);
             textBoxKindOFTrain.Margin = new Padding(3, 4, 3, 4);
             textBoxKindOFTrain.Name = "textBoxKindOFTrain";
             textBoxKindOFTrain.Size = new Size(217, 27);
@@ -108,31 +109,30 @@
             // textBoxNumOfSeats
             // 
             textBoxNumOfSeats.BackColor = Color.FromArgb(230, 231, 233);
-            textBoxNumOfSeats.Location = new Point(136, 81);
+            textBoxNumOfSeats.Location = new Point(121, 59);
             textBoxNumOfSeats.Margin = new Padding(3, 4, 3, 4);
             textBoxNumOfSeats.Name = "textBoxNumOfSeats";
             textBoxNumOfSeats.Size = new Size(217, 27);
             textBoxNumOfSeats.TabIndex = 8;
-            textBoxNumOfSeats.TextChanged += textBoxNumOfSeats_TextChanged_1;
             // 
             // UpdateButton
             // 
             UpdateButton.BackColor = Color.FromArgb(91, 92, 194);
             UpdateButton.ForeColor = Color.WhiteSmoke;
-            UpdateButton.Location = new Point(136, 453);
+            UpdateButton.Location = new Point(121, 431);
             UpdateButton.Margin = new Padding(3, 4, 3, 4);
             UpdateButton.Name = "UpdateButton";
             UpdateButton.Size = new Size(217, 53);
             UpdateButton.TabIndex = 7;
             UpdateButton.Text = "Update";
             UpdateButton.UseVisualStyleBackColor = false;
-            UpdateButton.Click += UpdateButton_Click_1;
+            UpdateButton.Click += UpdateButton_Click;
             // 
             // UpdateTrain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(895, 562);
+            ClientSize = new Size(898, 562);
             Controls.Add(AdminFormbutton);
             Controls.Add(dataGridViewForTrains);
             Controls.Add(label2);
