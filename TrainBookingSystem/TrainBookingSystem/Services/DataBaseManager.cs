@@ -243,6 +243,40 @@ namespace TrainBookingSystem.Services
             return inserted;
         }
 
+        public bool CancelTrip(int TripId=1)
+        {
+            // flag
+            bool canceled = false;
+
+            try
+            {
+                // new connection
+                ConnectToDatabase();
+
+                // query
+                String query = "Update TripBookings SET BookingStatus='Cancelled' WHERE TripId=@TripId";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@TripId", TripId);
+
+                    // get number of row affected to know if they been inserted or not
+                    int rowAffected = command.ExecuteNonQuery();
+
+                    if (rowAffected > 0) { canceled = true; }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception Caught", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Disconnect();
+            }
+
+            // return flag
+            return canceled;
+        }
 
         public bool InsertBookedTrip(int passengerId=0, int TripId = 0, DateTime BookingDate = new DateTime())
         {
@@ -273,9 +307,11 @@ namespace TrainBookingSystem.Services
             {
                 MessageBox.Show(ex.Message, "Exception Caught", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // close connection
-            this.connection.Close();
+            finally
+            {
+                // close connection
+                this.connection.Close();
+            }
 
             // return flag
             return inserted;
