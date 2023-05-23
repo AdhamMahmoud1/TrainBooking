@@ -89,3 +89,7 @@ D:\FCAI\second_semester\DataBase_project\TrainBooking\TrainBooking\TrainBookingS
 D:\FCAI\second_semester\DataBase_project\TrainBooking\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AddTrain.resources
 D:\FCAI\second_semester\DataBase_project\TrainBooking\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Properties.Resources.resources
 D:\FCAI\second_semester\DataBase_project\TrainBooking\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AddTrip.resources
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AddTrain.resources
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AddTrip.resources
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Forms.AdminForm.resources
+C:\Users\fadyk\C#_Projects\TrainBooking\TrainBookingSystem\TrainBookingSystem\obj\Debug\net6.0-windows\TrainBookingSystem.Properties.Resources.resources

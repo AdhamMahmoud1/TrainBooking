@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FCAI\\second_semester\\DataBase_project\\TrainBooking\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\TrainBookingSystem.csproj": {}
+    "C:\\Users\\fadyk\\C#_Projects\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\TrainBookingSystem.csproj": {}
   },
   "projects": {
-    "D:\\FCAI\\second_semester\\DataBase_project\\TrainBooking\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\TrainBookingSystem.csproj": {
+    "C:\\Users\\fadyk\\C#_Projects\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\TrainBookingSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FCAI\\second_semester\\DataBase_project\\TrainBooking\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\TrainBookingSystem.csproj",
+        "projectUniqueName": "C:\\Users\\fadyk\\C#_Projects\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\TrainBookingSystem.csproj",
         "projectName": "TrainBookingSystem",
-        "projectPath": "D:\\FCAI\\second_semester\\DataBase_project\\TrainBooking\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\TrainBookingSystem.csproj",
-        "packagesPath": "C:\\Users\\mahmo\\.nuget\\packages\\",
-        "outputPath": "D:\\FCAI\\second_semester\\DataBase_project\\TrainBooking\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\obj\\",
+        "projectPath": "C:\\Users\\fadyk\\C#_Projects\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\TrainBookingSystem.csproj",
+        "packagesPath": "C:\\Users\\fadyk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fadyk\\C#_Projects\\TrainBooking\\TrainBookingSystem\\TrainBookingSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mahmo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fadyk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

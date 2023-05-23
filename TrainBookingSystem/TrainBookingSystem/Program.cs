@@ -15,7 +15,8 @@ namespace TrainBookingSystem
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             
-            Application.Run(new Login());
+            Admin admin= new Admin();
+            Application.Run(new AdminForm(admin));
 
         }
     }
