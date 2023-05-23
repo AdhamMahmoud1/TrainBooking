@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,7 +64,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(108, 55);
+            this.label4.Location = new System.Drawing.Point(99, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 23);
             this.label4.TabIndex = 14;
@@ -74,18 +75,18 @@
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblRole.ForeColor = System.Drawing.Color.White;
-            this.lblRole.Location = new System.Drawing.Point(207, 55);
+            this.lblRole.Location = new System.Drawing.Point(173, 43);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(74, 23);
+            this.lblRole.Size = new System.Drawing.Size(111, 23);
             this.lblRole.TabIndex = 14;
-            this.lblRole.Text = "Admin";
+            this.lblRole.Text = "passenger";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(465, 35);
+            this.lblTitle.Location = new System.Drawing.Point(401, 16);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(158, 41);
             this.lblTitle.TabIndex = 14;
@@ -98,9 +99,8 @@
             this.lblUserName.ForeColor = System.Drawing.Color.White;
             this.lblUserName.Location = new System.Drawing.Point(186, 20);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(149, 23);
+            this.lblUserName.Size = new System.Drawing.Size(0, 23);
             this.lblUserName.TabIndex = 14;
-            this.lblUserName.Text = "SaLaaR HuSyN";
             // 
             // panel4
             // 
@@ -111,9 +111,9 @@
             this.panel4.Controls.Add(this.lblUserName);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(223, 49);
+            this.panel4.Location = new System.Drawing.Point(223, 37);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1095, 102);
+            this.panel4.Size = new System.Drawing.Size(980, 81);
             this.panel4.TabIndex = 5;
             // 
             // label3
@@ -121,7 +121,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(57, 20);
+            this.label3.Location = new System.Drawing.Point(35, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 23);
             this.label3.TabIndex = 14;
@@ -134,9 +134,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
-            this.button2.Location = new System.Drawing.Point(1038, 0);
+            this.button2.Location = new System.Drawing.Point(923, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 49);
+            this.button2.Size = new System.Drawing.Size(57, 37);
             this.button2.TabIndex = 2;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = true;
@@ -144,12 +144,27 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(223, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1095, 49);
+            this.panel3.Size = new System.Drawing.Size(980, 37);
             this.panel3.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
+            this.button3.Location = new System.Drawing.Point(866, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(57, 37);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "-";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -171,7 +186,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(163, 3);
+            this.button1.Location = new System.Drawing.Point(80, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(46, 44);
             this.button1.TabIndex = 1;
@@ -233,7 +248,7 @@
             this.btnAboutUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAboutUs.ForeColor = System.Drawing.Color.White;
             this.btnAboutUs.Image = ((System.Drawing.Image)(resources.GetObject("btnAboutUs.Image")));
-            this.btnAboutUs.Location = new System.Drawing.Point(3, 1316);
+            this.btnAboutUs.Location = new System.Drawing.Point(3, 1391);
             this.btnAboutUs.Name = "btnAboutUs";
             this.btnAboutUs.Size = new System.Drawing.Size(46, 44);
             this.btnAboutUs.TabIndex = 1;
@@ -278,7 +293,7 @@
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(223, 751);
+            this.panelLeft.Size = new System.Drawing.Size(223, 724);
             this.panelLeft.TabIndex = 4;
             // 
             // btnWorks
@@ -323,9 +338,9 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Location = new System.Drawing.Point(223, 151);
+            this.mainPanel.Location = new System.Drawing.Point(223, 146);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1095, 600);
+            this.mainPanel.Size = new System.Drawing.Size(977, 576);
             this.mainPanel.TabIndex = 7;
             // 
             // PassengerForm
@@ -333,7 +348,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1318, 751);
+            this.ClientSize = new System.Drawing.Size(1203, 724);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -381,5 +396,6 @@
         private Panel panelContainer;
         private Button btnWorks;
         private Panel mainPanel;
+        private Button button3;
     }
 }

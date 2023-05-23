@@ -88,6 +88,8 @@ namespace TrainBookingSystem.Forms
 
                         // set logged in = true
                         this.isLoggedInAsAdmin = true;
+
+                        // call admin form
                     }
                     else
                     {
@@ -124,6 +126,16 @@ namespace TrainBookingSystem.Forms
 
                         // set logged in = true
                         this.isLoggedInAsCustomer = true;
+
+                        Passenger passenger = this._dataBaseManager.GetPassengerFromDataBase(this.textBoxEmail.Text);
+
+                        // hide login form
+                        this.Hide();
+
+                        
+                        // call customer form
+                        PassengerForm passn= new PassengerForm(passenger);
+                        passn.ShowDialog();
                     }
                     else
                     {
@@ -158,11 +170,10 @@ namespace TrainBookingSystem.Forms
                     while (reader.Read())
                     {
                         admin.AdminId = (int)reader.GetValue(0);
-                        admin.FirstName = (string)reader.GetValue(1);
-                        admin.LastName = (string)reader.GetValue(2);
-                        admin.Email = (string)reader.GetValue(3);
-                        admin.PhoneNumber = (string)reader.GetValue(4);
-                        admin.Password = (string)reader.GetValue(5);
+                        admin.Username = (string)reader.GetValue(1);
+                        admin.Email = (string)reader.GetValue(2);
+                        admin.PhoneNumber = (string)reader.GetValue(3);
+                        admin.Password = (string)reader.GetValue(4);
                     }
                 }
                 else
