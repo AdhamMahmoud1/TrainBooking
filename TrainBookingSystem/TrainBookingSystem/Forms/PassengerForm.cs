@@ -40,15 +40,6 @@ namespace TrainBookingSystem.Forms
             this.lblUserName.Text = this.passenger.Username;
         }
 
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -94,7 +85,7 @@ namespace TrainBookingSystem.Forms
 
         private void btnContractors_Click(object sender, EventArgs e)
         {
-            this.lblTitle.Text = "Register New Trip";
+            this.lblTitle.Text = "Book A New Trip";
 
             // it controls
             RegisterTrip uC = new RegisterTrip(this.passenger);
@@ -119,7 +110,7 @@ namespace TrainBookingSystem.Forms
             // title
             this.lblTitle.Text = "Profile";
 
-            LoadForm(new MyProfileForm());
+            LoadForm(new MyProfileForm(this.passenger));
         }
     }
 }

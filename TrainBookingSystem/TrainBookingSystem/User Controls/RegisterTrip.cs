@@ -181,7 +181,11 @@ namespace TrainBookingSystem.User_Controls
         {
             if (_trips != null)
             {
+                // init datagridview
                 this.dataGridViewTripsWithSourceAndDistination.DataSource = this._trips;
+
+                // prevent user from adding rows
+                this.dataGridViewTripsWithSourceAndDistination.AllowUserToAddRows= false;
 
             }
         }
@@ -193,7 +197,6 @@ namespace TrainBookingSystem.User_Controls
                 // works if user selected a row
                 if (dataGridViewTripsWithSourceAndDistination.SelectedRows.Count > 0)
                 {
-                    this._passenger.Print();
                     // get selected from datagrid view to git trip id
                     DataGridViewRow selectedRow = dataGridViewTripsWithSourceAndDistination.SelectedRows[0];
 
@@ -223,9 +226,6 @@ namespace TrainBookingSystem.User_Controls
                 // message to select row
                 MessageBox.Show(ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
-            
-
         }
     }
 }

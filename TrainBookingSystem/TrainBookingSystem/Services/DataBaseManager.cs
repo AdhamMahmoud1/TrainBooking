@@ -140,6 +140,40 @@ namespace TrainBookingSystem.Services
             return exists;
         }
 
+        public int NumberOfExistance<T>(string tableName = "Passenger", string columnName = "Email", T element = default)
+        {
+            int count = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = $"SELECT COUNT(*) FROM {tableName} WHERE {columnName} = @ElementValue";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ElementValue", element);
+
+                        count = (int)command.ExecuteScalar();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception appropriately for your application type
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            return count;
+        }
+
+
 
         public bool DoesUserExistInTable<T>(string tableName="Passenger", String email="", String password="")
         {
@@ -242,6 +276,41 @@ namespace TrainBookingSystem.Services
             // return flag
             return inserted;
         }
+
+        public bool UpdatePassengerInformation(string columnName, string info, int passengerId)
+        {
+            bool updated = false;
+
+            try
+            {
+                connection.Open(); // Open the connection
+
+                string query = $"UPDATE Passenger SET {columnName} = @info WHERE PassengerId = @passengerId";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@info", info);
+                    command.Parameters.AddWithValue("@passengerId", passengerId);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        updated = true;
+                    }
+                }
+
+                connection.Close(); // Close the connection
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception Caught", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return updated;
+        }
+
+
+
 
         public bool CancelTrip(int TripId=1)
         {
@@ -346,52 +415,104 @@ namespace TrainBookingSystem.Services
                 }
             }
 
-
+            
             // reutrn datareader
             return reader;
         }
 
 
-        public Passenger GetPassengerFromDataBase(String userEmail="Email")
+        public Passenger GetPassengerFromDataBase(string userEmail = "Email")
         {
-            SqlDataReader reader = null;
-
-            // connect to database
+            // Connect to database
             ConnectToDatabase();
 
-            // query 
-            String query = $"SELECT * FROM Passenger WHERE Email = @ElementValue";
+            // Query 
+            string query = $"SELECT * FROM Passenger WHERE Email = @ElementValue";
 
-
-            // exute command
+            // Execute command
             using (SqlCommand command = new SqlCommand(query, this.SqlConnection))
             {
-                // replace @element valude with element name
+                // Replace @ElementValue with userEmail
                 command.Parameters.AddWithValue("@ElementValue", userEmail);
 
-                // store return in reader
+                // Store return in reader
                 try
                 {
-                    reader= command.ExecuteReader();
+                    SqlDataReader reader = command.ExecuteReader();
 
                     while (reader.Read())
                     {
-
-                        Passenger pass = new Passenger((int)reader.GetValue(0), reader.GetValue(1).ToString(), reader.GetValue(2).ToString(), reader.GetValue(3).ToString(), reader.GetValue(4).ToString(), reader.GetValue(5).ToString());
-                        pass.Print();   
+                        Passenger pass = new Passenger(
+                            (int)reader.GetValue(0),
+                            reader.GetValue(1).ToString(),
+                            reader.GetValue(2).ToString(),
+                            reader.GetValue(3).ToString(),
+                            reader.GetValue(4).ToString(),
+                            reader.GetValue(5).ToString()
+                        );
                         return pass;
- 
                     }
-
                 }
                 catch (Exception ex)
                 {
                     // Handle the exception appropriately for your application type
                     MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                finally
+                {
+                    // Close connection
+                    Disconnect();
+                }
             }
-            return null;
 
+            return new Passenger();
+        }
+
+        public Passenger GetPassengerFromDataBaseById(int id = 1)
+        {
+            // Connect to database
+            ConnectToDatabase();
+
+            // Query 
+            string query = $"SELECT * FROM Passenger WHERE PassengerId = @ElementValue";
+
+            // Execute command
+            using (SqlCommand command = new SqlCommand(query, this.SqlConnection))
+            {
+                // Replace @ElementValue with userEmail
+                command.Parameters.AddWithValue("@ElementValue", id);
+
+                // Store return in reader
+                try
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Passenger pass = new Passenger(
+                            (int)reader.GetValue(0),
+                            reader.GetValue(1).ToString(),
+                            reader.GetValue(2).ToString(),
+                            reader.GetValue(3).ToString(),
+                            reader.GetValue(4).ToString(),
+                            reader.GetValue(5).ToString()
+                        );
+                        return pass;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception appropriately for your application type
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    // Close connection
+                    Disconnect();
+                }
+            }
+
+            return new Passenger();
         }
 
 
