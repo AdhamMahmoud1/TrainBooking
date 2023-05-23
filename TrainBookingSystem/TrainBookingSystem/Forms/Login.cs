@@ -58,7 +58,7 @@ namespace TrainBookingSystem.Forms
                     MessageBox.Show("Unfortunatlly You Are Not An Admin", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
-                else if (!this._dataBaseManager.DoElementExistInTable<String>("Admin", "Password", textBoxPassword.Text))
+                else if (!this._dataBaseManager.DoElementExistInTable<String>("Admin", "PASSWORD", textBoxPassword.Text))
                 {
                     MessageBox.Show("Invalid Password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
