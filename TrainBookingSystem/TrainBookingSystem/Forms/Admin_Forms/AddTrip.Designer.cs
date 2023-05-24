@@ -1,4 +1,4 @@
-﻿namespace TrainBookingSystem.Forms
+﻿namespace TrainBookingSystem.Forms.Admin_Forms
 {
     partial class AddTrip
     {
@@ -28,232 +28,230 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Label LoginInHeader;
-            AddTrainButton = new Button();
-            textBoxSource = new TextBox();
-            labelUsername = new Label();
-            textboxDate = new TextBox();
-            labelEmail = new Label();
-            textBoxDest = new TextBox();
-            label1 = new Label();
-            textBoxArrival = new TextBox();
-            label2 = new Label();
-            textBoxTrainID = new TextBox();
-            label3 = new Label();
-            textBoxPrice = new TextBox();
-            label4 = new Label();
-            LoginInHeader = new Label();
-            SuspendLayout();
+            System.Windows.Forms.Label LoginInHeader;
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxTrainID = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxDest = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxArrival = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.AddTrainButton = new System.Windows.Forms.Button();
+            this.textBoxSource = new System.Windows.Forms.TextBox();
+            this.labelUsername = new System.Windows.Forms.Label();
+            this.textboxDate = new System.Windows.Forms.TextBox();
+            this.labelEmail = new System.Windows.Forms.Label();
+            LoginInHeader = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // LoginInHeader
             // 
             LoginInHeader.AutoSize = true;
-            LoginInHeader.Font = new Font("MS Gothic", 19.8F, FontStyle.Bold, GraphicsUnit.Point);
-            LoginInHeader.ForeColor = Color.FromArgb(91, 92, 194);
-            LoginInHeader.Location = new Point(12, 26);
+            LoginInHeader.Font = new System.Drawing.Font("MS Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            LoginInHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(194)))));
+            LoginInHeader.Location = new System.Drawing.Point(294, 26);
             LoginInHeader.Name = "LoginInHeader";
-            LoginInHeader.Size = new Size(375, 33);
-            LoginInHeader.TabIndex = 50;
-            LoginInHeader.Text = "Welcom To Admin Page";
-            LoginInHeader.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // AddTrainButton
-            // 
-            AddTrainButton.BackColor = Color.FromArgb(91, 92, 194);
-            AddTrainButton.BackgroundImageLayout = ImageLayout.None;
-            AddTrainButton.Cursor = Cursors.Hand;
-            AddTrainButton.FlatAppearance.BorderSize = 0;
-            AddTrainButton.FlatStyle = FlatStyle.Flat;
-            AddTrainButton.Font = new Font("Nirmala UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            AddTrainButton.ForeColor = Color.White;
-            AddTrainButton.Location = new Point(479, 375);
-            AddTrainButton.Name = "AddTrainButton";
-            AddTrainButton.Size = new Size(299, 48);
-            AddTrainButton.TabIndex = 55;
-            AddTrainButton.Text = "ADD TRIP";
-            AddTrainButton.UseMnemonic = false;
-            AddTrainButton.UseVisualStyleBackColor = false;
-            AddTrainButton.Click += AddTrainButton_Click;
-            // 
-            // textBoxSource
-            // 
-            textBoxSource.BackColor = Color.FromArgb(230, 231, 233);
-            textBoxSource.BorderStyle = BorderStyle.None;
-            textBoxSource.Font = new Font("MS Reference Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxSource.ForeColor = SystemColors.InfoText;
-            textBoxSource.Location = new Point(12, 130);
-            textBoxSource.Multiline = true;
-            textBoxSource.Name = "textBoxSource";
-            textBoxSource.Size = new Size(299, 33);
-            textBoxSource.TabIndex = 53;
-            // 
-            // labelUsername
-            // 
-            labelUsername.AutoSize = true;
-            labelUsername.Font = new Font("Nirmala UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            labelUsername.Location = new Point(12, 102);
-            labelUsername.Name = "labelUsername";
-            labelUsername.Size = new Size(70, 25);
-            labelUsername.TabIndex = 51;
-            labelUsername.Text = "Source";
-            labelUsername.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // textboxDate
-            // 
-            textboxDate.BackColor = Color.FromArgb(230, 231, 233);
-            textboxDate.BorderStyle = BorderStyle.None;
-            textboxDate.Font = new Font("MS Reference Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textboxDate.ForeColor = SystemColors.InfoText;
-            textboxDate.Location = new Point(12, 212);
-            textboxDate.Multiline = true;
-            textboxDate.Name = "textboxDate";
-            textboxDate.Size = new Size(299, 39);
-            textboxDate.TabIndex = 54;
-            // 
-            // labelEmail
-            // 
-            labelEmail.AutoSize = true;
-            labelEmail.Font = new Font("Nirmala UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            labelEmail.Location = new Point(12, 175);
-            labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(52, 25);
-            labelEmail.TabIndex = 52;
-            labelEmail.Text = "Date";
-            labelEmail.Click += labelEmail_Click;
-            // 
-            // textBoxDest
-            // 
-            textBoxDest.BackColor = Color.FromArgb(230, 231, 233);
-            textBoxDest.BorderStyle = BorderStyle.None;
-            textBoxDest.Font = new Font("MS Reference Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxDest.ForeColor = SystemColors.InfoText;
-            textBoxDest.Location = new Point(489, 130);
-            textBoxDest.Multiline = true;
-            textBoxDest.Name = "textBoxDest";
-            textBoxDest.Size = new Size(299, 33);
-            textBoxDest.TabIndex = 58;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Nirmala UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(489, 102);
-            label1.Name = "label1";
-            label1.Size = new Size(110, 25);
-            label1.TabIndex = 56;
-            label1.Text = "Destination";
-            label1.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // textBoxArrival
-            // 
-            textBoxArrival.BackColor = Color.FromArgb(230, 231, 233);
-            textBoxArrival.BorderStyle = BorderStyle.None;
-            textBoxArrival.Font = new Font("MS Reference Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxArrival.ForeColor = SystemColors.InfoText;
-            textBoxArrival.Location = new Point(479, 212);
-            textBoxArrival.Multiline = true;
-            textBoxArrival.Name = "textBoxArrival";
-            textBoxArrival.Size = new Size(299, 39);
-            textBoxArrival.TabIndex = 59;
-            textBoxArrival.TextChanged += textBoxArrival_TextChanged;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Nirmala UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(489, 184);
-            label2.Name = "label2";
-            label2.Size = new Size(114, 25);
-            label2.TabIndex = 57;
-            label2.Text = "Arrival Date";
-            // 
-            // textBoxTrainID
-            // 
-            textBoxTrainID.BackColor = Color.FromArgb(230, 231, 233);
-            textBoxTrainID.BorderStyle = BorderStyle.None;
-            textBoxTrainID.Font = new Font("MS Reference Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxTrainID.ForeColor = SystemColors.InfoText;
-            textBoxTrainID.Location = new Point(12, 299);
-            textBoxTrainID.Multiline = true;
-            textBoxTrainID.Name = "textBoxTrainID";
-            textBoxTrainID.Size = new Size(299, 33);
-            textBoxTrainID.TabIndex = 62;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Nirmala UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(12, 271);
-            label3.Name = "label3";
-            label3.Size = new Size(78, 25);
-            label3.TabIndex = 60;
-            label3.Text = "Train ID";
-            label3.TextAlign = ContentAlignment.TopCenter;
+            LoginInHeader.Size = new System.Drawing.Size(159, 33);
+            LoginInHeader.TabIndex = 65;
+            LoginInHeader.Text = "Add Trip";
+            LoginInHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // textBoxPrice
             // 
-            textBoxPrice.BackColor = Color.FromArgb(230, 231, 233);
-            textBoxPrice.BorderStyle = BorderStyle.None;
-            textBoxPrice.Font = new Font("MS Reference Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPrice.ForeColor = SystemColors.InfoText;
-            textBoxPrice.Location = new Point(479, 299);
-            textBoxPrice.Multiline = true;
-            textBoxPrice.Name = "textBoxPrice";
-            textBoxPrice.Size = new Size(299, 33);
-            textBoxPrice.TabIndex = 64;
-            textBoxPrice.TextChanged += textBoxPrice_TextChanged;
+            this.textBoxPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.textBoxPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPrice.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPrice.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.textBoxPrice.Location = new System.Drawing.Point(489, 298);
+            this.textBoxPrice.Multiline = true;
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(299, 33);
+            this.textBoxPrice.TabIndex = 78;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Nirmala UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(479, 271);
-            label4.Name = "label4";
-            label4.Size = new Size(54, 25);
-            label4.TabIndex = 63;
-            label4.Text = "Price";
-            label4.TextAlign = ContentAlignment.TopCenter;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(489, 270);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 25);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "Price";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBoxTrainID
+            // 
+            this.textBoxTrainID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.textBoxTrainID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTrainID.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxTrainID.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.textBoxTrainID.Location = new System.Drawing.Point(12, 298);
+            this.textBoxTrainID.Multiline = true;
+            this.textBoxTrainID.Name = "textBoxTrainID";
+            this.textBoxTrainID.Size = new System.Drawing.Size(299, 33);
+            this.textBoxTrainID.TabIndex = 76;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(12, 270);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 25);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "Train ID";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBoxDest
+            // 
+            this.textBoxDest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.textBoxDest.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDest.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxDest.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.textBoxDest.Location = new System.Drawing.Point(489, 129);
+            this.textBoxDest.Multiline = true;
+            this.textBoxDest.Name = "textBoxDest";
+            this.textBoxDest.Size = new System.Drawing.Size(299, 33);
+            this.textBoxDest.TabIndex = 73;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(489, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 25);
+            this.label1.TabIndex = 71;
+            this.label1.Text = "Destination";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBoxArrival
+            // 
+            this.textBoxArrival.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.textBoxArrival.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxArrival.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxArrival.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.textBoxArrival.Location = new System.Drawing.Point(489, 211);
+            this.textBoxArrival.Multiline = true;
+            this.textBoxArrival.Name = "textBoxArrival";
+            this.textBoxArrival.Size = new System.Drawing.Size(299, 39);
+            this.textBoxArrival.TabIndex = 74;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(489, 183);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 25);
+            this.label2.TabIndex = 72;
+            this.label2.Text = "Arrival Date";
+            // 
+            // AddTrainButton
+            // 
+            this.AddTrainButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(92)))), ((int)(((byte)(194)))));
+            this.AddTrainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AddTrainButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddTrainButton.FlatAppearance.BorderSize = 0;
+            this.AddTrainButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddTrainButton.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AddTrainButton.ForeColor = System.Drawing.Color.White;
+            this.AddTrainButton.Location = new System.Drawing.Point(489, 377);
+            this.AddTrainButton.Name = "AddTrainButton";
+            this.AddTrainButton.Size = new System.Drawing.Size(299, 48);
+            this.AddTrainButton.TabIndex = 70;
+            this.AddTrainButton.Text = "ADD TRIP";
+            this.AddTrainButton.UseMnemonic = false;
+            this.AddTrainButton.UseVisualStyleBackColor = false;
+            this.AddTrainButton.Click += new System.EventHandler(this.AddTrainButton_Click);
+            // 
+            // textBoxSource
+            // 
+            this.textBoxSource.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.textBoxSource.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSource.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSource.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.textBoxSource.Location = new System.Drawing.Point(12, 129);
+            this.textBoxSource.Multiline = true;
+            this.textBoxSource.Name = "textBoxSource";
+            this.textBoxSource.Size = new System.Drawing.Size(299, 33);
+            this.textBoxSource.TabIndex = 68;
+            // 
+            // labelUsername
+            // 
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelUsername.Location = new System.Drawing.Point(12, 101);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(70, 25);
+            this.labelUsername.TabIndex = 66;
+            this.labelUsername.Text = "Source";
+            this.labelUsername.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textboxDate
+            // 
+            this.textboxDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.textboxDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textboxDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textboxDate.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.textboxDate.Location = new System.Drawing.Point(12, 211);
+            this.textboxDate.Multiline = true;
+            this.textboxDate.Name = "textboxDate";
+            this.textboxDate.Size = new System.Drawing.Size(299, 39);
+            this.textboxDate.TabIndex = 69;
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelEmail.Location = new System.Drawing.Point(12, 174);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(52, 25);
+            this.labelEmail.TabIndex = 67;
+            this.labelEmail.Text = "Date";
             // 
             // AddTrip
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(textBoxPrice);
-            Controls.Add(label4);
-            Controls.Add(textBoxTrainID);
-            Controls.Add(label3);
-            Controls.Add(textBoxDest);
-            Controls.Add(label1);
-            Controls.Add(textBoxArrival);
-            Controls.Add(label2);
-            Controls.Add(AddTrainButton);
-            Controls.Add(textBoxSource);
-            Controls.Add(labelUsername);
-            Controls.Add(textboxDate);
-            Controls.Add(labelEmail);
-            Controls.Add(LoginInHeader);
-            Name = "AddTrip";
-            Text = "AddTrip";
-            Load += AddTrip_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxPrice);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxTrainID);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBoxDest);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxArrival);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.AddTrainButton);
+            this.Controls.Add(this.textBoxSource);
+            this.Controls.Add(this.labelUsername);
+            this.Controls.Add(this.textboxDate);
+            this.Controls.Add(this.labelEmail);
+            this.Controls.Add(LoginInHeader);
+            this.Name = "AddTrip";
+            this.Text = "AddTrip";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
+        private TextBox textBoxPrice;
+        internal Label label4;
+        private TextBox textBoxTrainID;
+        internal Label label3;
+        private TextBox textBoxDest;
+        internal Label label1;
+        private TextBox textBoxArrival;
+        private Label label2;
         private Button AddTrainButton;
         private TextBox textBoxSource;
         internal Label labelUsername;
         private TextBox textboxDate;
         private Label labelEmail;
-        private TextBox textBoxDest;
-        internal Label label1;
-        private TextBox textBoxArrival;
-        private Label label2;
-        private TextBox textBoxTrainID;
-        internal Label label3;
-        private TextBox textBoxPrice;
-        internal Label label4;
     }
 }

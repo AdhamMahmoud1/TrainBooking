@@ -9,52 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrainBookingSystem.Services;
 
-namespace TrainBookingSystem.Forms
+namespace TrainBookingSystem.Forms.Admin_Forms
 {
     public partial class AddTrain : Form
     {
-
         public AddTrain()
         {
             InitializeComponent();
         }
 
-        private void labelPhoneNumber_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RegisterButton_Click(object sender, EventArgs e)
+        private void AddTrainButton_Click(object sender, EventArgs e)
         {
             DataBaseManager dbManager = new DataBaseManager();
             String seats = this.textBoxNumOfSeats.Text;
-            dbManager.InsertNewTrain(this.textboxKindOfTrain.Text, Convert.ToInt32(seats));
-        }
 
-        private void AddTrain_Load(object sender, EventArgs e)
-        {
+            if(dbManager.InsertNewTrain(this.textboxKindOfTrain.Text, Convert.ToInt32(seats)))
+            {
+                MessageBox.Show("!! Train Added Successfully !!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        }
-
-        private void textBoxNumOfSeats_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelUsername_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void textboxKindOfTrain_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void labelEmail_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void LoginInHeader_Click(object sender, EventArgs e)
-        {
+            }
+            else
+            {
+                MessageBox.Show("!! Somthing  Went Wrong !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
